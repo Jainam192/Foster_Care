@@ -1,0 +1,102 @@
+﻿@model List<SelectListItem>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Areas/Admin/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<section class="content-header">
+    <h1>Permission<small>(Add Permission)</small></h1>
+</section>
+<section class="content">
+    <div class="row">
+        <div class="col-md-12">
+            <div id="success" class="alert alert-success text-center" style="display:none;">Permission Updated Successfully!!</div>
+            <div id="fail" class="alert alert-danger text-center" style="display:none;">Please Select Role</div>
+            <div class="box box-warning">
+                <div class="box-body">
+                    <div class="form-group">
+                        <label>Role Name</label>
+                        @Html.DropDownList("RoleID", null, "--Select Role--", htmlAttributes: new { @class = "form-control", onchange = "getModule(this)" })
+                        <br />
+                        <button href="#" style="display:none;" class="btn btn-xs btn-warning" id="select">Select All</button>
+
+                        <div id="border" style="display:none; max-height:300px; overflow:scroll; border:1px solid; border-color:gray; padding:5px;">
+                            <table id="tblModule"></table>
+                        </div>
+                        <br />
+                        <input type="submit" id="btnSubmit" value="Save" class="btn btn-primary" />
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<script>
+    function getModule(val) {
+        $.ajax({
+            type: "GET",
+            url: "/Admin/PermissionMaster/getModule?RoleId=" + val.value,
+            success: function (data) {
+                var ModuleTable = $('#tblModule');
+                document.getElementById("border").style.display = "block";
+                document.getElementById("select").style.display = "block";
+                document.getElementById("select").innerHTML = "Select All";
+
+                ModuleTable.empty();
+                $(data).each(function (index, mod) {
+                    if (mod.Selected == true) {
+                        ModuleTable.append('<tr><td>  <input type="checkbox" id="' + mod.Value + '" name="module" value="' + mod.Value + '" checked>  ' + mod.Text
+                            + '</td></tr>');
+                    }
+                    else {
+                        ModuleTable.append('<tr><td>  <input type="checkbox" id="' + mod.Value + '" name="module" value="' + mod.Value + '">  ' + mod.Text
+                            + '</td></tr>');
+                    }
+                });
+            },
+            error: function (err) {
+                $("#fail").fadeTo(3000, 700).slideUp(700, function () {
+                    $("#fail").slideUp(700);
+                });
+            }
+        });
+    }
+
+    $('#btnSubmit').click(function () {
+        var RoleId = document.getElementById("RoleID").value;
+        var names = [];
+        $('input:checkbox[name=module]:checked').each(function () {
+            names.push($(this).val())
+        })
+        $.ajax({
+            url: "/Admin/PermissionMaster/Index?RoleId=" + RoleId,
+            method: "POST",
+            data: ({ 'names': names }),
+            dataType: "json",
+            complete: function () {
+                $("#success").fadeTo(3000, 700).slideUp(700, function () {
+                    $("#success").slideUp(700);
+                });
+            }
+
+        });
+
+    });
+    $('#select').click(function () {
+        var text = document.getElementById("select").innerHTML;
+        if (text == "Select All") {
+            document.getElementById("select").innerHTML = "Unselect All";
+            $('input:checkbox[name=module]').each(function () {
+                this.checked = true;
+            })
+        }
+        else {
+            document.getElementById("select").innerHTML = "Select All";
+            $('input:checkbox[name=module]').each(function () {
+                this.checked = false;
+            })
+        }
+
+    });
+</script>

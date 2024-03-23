@@ -1,0 +1,328 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="FosterCareDBModelStoreContainer" CdmEntityContainer="FosterCareDBEntities">
+    <EntitySetMapping Name="AdminLoginTbls">
+      <EntityTypeMapping TypeName="FosterCareDBModel.AdminLoginTbl">
+        <MappingFragment StoreEntitySet="AdminLoginTbl">
+          <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+          <ScalarProperty Name="Role" ColumnName="Role" />
+          <ScalarProperty Name="Password" ColumnName="Password" />
+          <ScalarProperty Name="ContactNumber" ColumnName="ContactNumber" />
+          <ScalarProperty Name="UserName" ColumnName="UserName" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="CCIMasterTbls">
+      <EntityTypeMapping TypeName="FosterCareDBModel.CCIMasterTbl">
+        <MappingFragment StoreEntitySet="CCIMasterTbl">
+          <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+          <ScalarProperty Name="ModifiedDate" ColumnName="ModifiedDate" />
+          <ScalarProperty Name="CreateDate" ColumnName="CreateDate" />
+          <ScalarProperty Name="InstitudeName" ColumnName="InstitudeName" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ChildCategoryTbls">
+      <EntityTypeMapping TypeName="FosterCareDBModel.ChildCategoryTbl">
+        <MappingFragment StoreEntitySet="ChildCategoryTbl">
+          <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+          <ScalarProperty Name="ChildCategory" ColumnName="ChildCategory" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ChildIndividualTbls">
+      <EntityTypeMapping TypeName="FosterCareDBModel.ChildIndividualTbl">
+        <MappingFragment StoreEntitySet="ChildIndividualTbl">
+          <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+          <ScalarProperty Name="ModifieddDate" ColumnName="ModifieddDate" />
+          <ScalarProperty Name="CreateDate" ColumnName="CreateDate" />
+          <ScalarProperty Name="Otherillness" ColumnName="Otherillness" />
+          <ScalarProperty Name="ChildImage" ColumnName="ChildImage" />
+          <ScalarProperty Name="ChildCategory" ColumnName="ChildCategory" />
+          <ScalarProperty Name="SocialCategory" ColumnName="SocialCategory" />
+          <ScalarProperty Name="ChildTehsil" ColumnName="ChildTehsil" />
+          <ScalarProperty Name="ChildDistrict" ColumnName="ChildDistrict" />
+          <ScalarProperty Name="ChildState" ColumnName="ChildState" />
+          <ScalarProperty Name="MotherName" ColumnName="MotherName" />
+          <ScalarProperty Name="FatherName" ColumnName="FatherName" />
+          <ScalarProperty Name="ChildGender" ColumnName="ChildGender" />
+          <ScalarProperty Name="ChildAge" ColumnName="ChildAge" />
+          <ScalarProperty Name="ChildName" ColumnName="ChildName" />
+          <ScalarProperty Name="Tehsil" ColumnName="Tehsil" />
+          <ScalarProperty Name="District" ColumnName="District" />
+          <ScalarProperty Name="State" ColumnName="State" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="PhoneNumber" ColumnName="PhoneNumber" />
+          <ScalarProperty Name="Gender" ColumnName="Gender" />
+          <ScalarProperty Name="Age" ColumnName="Age" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ChildInstitutionTbls">
+      <EntityTypeMapping TypeName="FosterCareDBModel.ChildInstitutionTbl">
+        <MappingFragment StoreEntitySet="ChildInstitutionTbl">
+          <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+          <ScalarProperty Name="ModifiedDate" ColumnName="ModifiedDate" />
+          <ScalarProperty Name="CreateDate" ColumnName="CreateDate" />
+          <ScalarProperty Name="ChildImage" ColumnName="ChildImage" />
+          <ScalarProperty Name="Otherillness" ColumnName="Otherillness" />
+          <ScalarProperty Name="CategoryOfChild" ColumnName="CategoryOfChild" />
+          <ScalarProperty Name="SocialCategory" ColumnName="SocialCategory" />
+          <ScalarProperty Name="MotherName" ColumnName="MotherName" />
+          <ScalarProperty Name="FatherName" ColumnName="FatherName" />
+          <ScalarProperty Name="ChildTehsil" ColumnName="ChildTehsil" />
+          <ScalarProperty Name="ChildDistrictId" ColumnName="ChildDistrictId" />
+          <ScalarProperty Name="ChildStateId" ColumnName="ChildStateId" />
+          <ScalarProperty Name="ChildGender" ColumnName="ChildGender" />
+          <ScalarProperty Name="ChildAge" ColumnName="ChildAge" />
+          <ScalarProperty Name="ChildName" ColumnName="ChildName" />
+          <ScalarProperty Name="TehsilID" ColumnName="TehsilID" />
+          <ScalarProperty Name="DesignationOfTheEmployee" ColumnName="DesignationOfTheEmployee" />
+          <ScalarProperty Name="NameOfEmployee" ColumnName="NameOfEmployee" />
+          <ScalarProperty Name="TypeOfOrganization" ColumnName="TypeOfOrganization" />
+          <ScalarProperty Name="NameOfTheOrganization" ColumnName="NameOfTheOrganization" />
+          <ScalarProperty Name="DistrictID" ColumnName="DistrictID" />
+          <ScalarProperty Name="StateID" ColumnName="StateID" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ChildMasterTbls">
+      <EntityTypeMapping TypeName="FosterCareDBModel.ChildMasterTbl">
+        <MappingFragment StoreEntitySet="ChildMasterTbl">
+          <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+          <ScalarProperty Name="ModifiedDate" ColumnName="ModifiedDate" />
+          <ScalarProperty Name="CreateDate" ColumnName="CreateDate" />
+          <ScalarProperty Name="LastFollowUpDate" ColumnName="LastFollowUpDate" />
+          <ScalarProperty Name="MonitoringDistrict" ColumnName="MonitoringDistrict" />
+          <ScalarProperty Name="PlacementDistrict" ColumnName="PlacementDistrict" />
+          <ScalarProperty Name="IsFostering" ColumnName="IsFostering" />
+          <ScalarProperty Name="PotentialForFoster" ColumnName="PotentialForFoster" />
+          <ScalarProperty Name="InCCIFor" ColumnName="InCCIFor" />
+          <ScalarProperty Name="BiologicalParentsConsentToFostering" ColumnName="BiologicalParentsConsentToFostering" />
+          <ScalarProperty Name="ChildConsentToFostering" ColumnName="ChildConsentToFostering" />
+          <ScalarProperty Name="ChildCareInstitutionEnrollDate" ColumnName="ChildCareInstitutionEnrollDate" />
+          <ScalarProperty Name="DataCollectionDate" ColumnName="DataCollectionDate" />
+          <ScalarProperty Name="RelativeContactNumber" ColumnName="RelativeContactNumber" />
+          <ScalarProperty Name="RelativeAddress" ColumnName="RelativeAddress" />
+          <ScalarProperty Name="ClosestAliveRelative" ColumnName="ClosestAliveRelative" />
+          <ScalarProperty Name="ContactNumber" ColumnName="ContactNumber" />
+          <ScalarProperty Name="AddressDistrict" ColumnName="AddressDistrict" />
+          <ScalarProperty Name="CaretakerAddress" ColumnName="CaretakerAddress" />
+          <ScalarProperty Name="SiblingCount" ColumnName="SiblingCount" />
+          <ScalarProperty Name="BrothersCount" ColumnName="BrothersCount" />
+          <ScalarProperty Name="SistersCount" ColumnName="SistersCount" />
+          <ScalarProperty Name="FathersCurrentStatus" ColumnName="FathersCurrentStatus" />
+          <ScalarProperty Name="FathersName" ColumnName="FathersName" />
+          <ScalarProperty Name="MothersCurrentStatus" ColumnName="MothersCurrentStatus" />
+          <ScalarProperty Name="MothersName" ColumnName="MothersName" />
+          <ScalarProperty Name="SpecialChild" ColumnName="SpecialChild" />
+          <ScalarProperty Name="SocialGroup" ColumnName="SocialGroup" />
+          <ScalarProperty Name="Education" ColumnName="Education" />
+          <ScalarProperty Name="Age" ColumnName="Age" />
+          <ScalarProperty Name="DOB" ColumnName="DOB" />
+          <ScalarProperty Name="Sex" ColumnName="Sex" />
+          <ScalarProperty Name="ChildName" ColumnName="ChildName" />
+          <ScalarProperty Name="ChildCode" ColumnName="ChildCode" />
+          <ScalarProperty Name="DistrictID" ColumnName="DistrictID" />
+          <ScalarProperty Name="CCIMasterID" ColumnName="CCIMasterID" />
+          <ScalarProperty Name="SerialNumber" ColumnName="SerialNumber" />
+          <ScalarProperty Name="UserID" ColumnName="UserID" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ChildParentConnectionTbls">
+      <EntityTypeMapping TypeName="FosterCareDBModel.ChildParentConnectionTbl">
+        <MappingFragment StoreEntitySet="ChildParentConnectionTbl">
+          <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+          <ScalarProperty Name="ModifiedDate" ColumnName="ModifiedDate" />
+          <ScalarProperty Name="CreateDate" ColumnName="CreateDate" />
+          <ScalarProperty Name="ParentID" ColumnName="ParentID" />
+          <ScalarProperty Name="ChildID" ColumnName="ChildID" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="DistrictMasterTbls">
+      <EntityTypeMapping TypeName="FosterCareDBModel.DistrictMasterTbl">
+        <MappingFragment StoreEntitySet="DistrictMasterTbl">
+          <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+          <ScalarProperty Name="ModifiedDate" ColumnName="ModifiedDate" />
+          <ScalarProperty Name="CreateDate" ColumnName="CreateDate" />
+          <ScalarProperty Name="DistrictName" ColumnName="DistrictName" />
+          <ScalarProperty Name="StateID" ColumnName="StateID" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="EnquiryTbls">
+      <EntityTypeMapping TypeName="FosterCareDBModel.EnquiryTbl">
+        <MappingFragment StoreEntitySet="EnquiryTbl">
+          <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+          <ScalarProperty Name="ModifiedDate" ColumnName="ModifiedDate" />
+          <ScalarProperty Name="CreateDate" ColumnName="CreateDate" />
+          <ScalarProperty Name="Message" ColumnName="Message" />
+          <ScalarProperty Name="Address" ColumnName="Address" />
+          <ScalarProperty Name="ContactNumber" ColumnName="ContactNumber" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="UserID" ColumnName="UserID" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="FosterParentTbls">
+      <EntityTypeMapping TypeName="FosterCareDBModel.FosterParentTbl">
+        <MappingFragment StoreEntitySet="FosterParentTbl">
+          <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+          <ScalarProperty Name="ModifiedDate" ColumnName="ModifiedDate" />
+          <ScalarProperty Name="CreateDate" ColumnName="CreateDate" />
+          <ScalarProperty Name="OccupationOfSpouse" ColumnName="OccupationOfSpouse" />
+          <ScalarProperty Name="AgeOfSpouse" ColumnName="AgeOfSpouse" />
+          <ScalarProperty Name="NameOfSpouse" ColumnName="NameOfSpouse" />
+          <ScalarProperty Name="MaritalStatus" ColumnName="MaritalStatus" />
+          <ScalarProperty Name="Occupation" ColumnName="Occupation" />
+          <ScalarProperty Name="OtherEducation" ColumnName="OtherEducation" />
+          <ScalarProperty Name="Education" ColumnName="Education" />
+          <ScalarProperty Name="OtherReasone" ColumnName="OtherReasone" />
+          <ScalarProperty Name="ReasonForFosterCare" ColumnName="ReasonForFosterCare" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="PhoneNumber" ColumnName="PhoneNumber" />
+          <ScalarProperty Name="Age" ColumnName="Age" />
+          <ScalarProperty Name="Gender" ColumnName="Gender" />
+          <ScalarProperty Name="District" ColumnName="District" />
+          <ScalarProperty Name="State" ColumnName="State" />
+          <ScalarProperty Name="FosterParentName" ColumnName="FosterParentName" />
+          <ScalarProperty Name="FosterCareFor" ColumnName="FosterCareFor" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ModuleMasterTbls">
+      <EntityTypeMapping TypeName="FosterCareDBModel.ModuleMasterTbl">
+        <MappingFragment StoreEntitySet="ModuleMasterTbl">
+          <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+          <ScalarProperty Name="URL" ColumnName="URL" />
+          <ScalarProperty Name="ModuleName" ColumnName="ModuleName" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ParentMasterTbls">
+      <EntityTypeMapping TypeName="FosterCareDBModel.ParentMasterTbl">
+        <MappingFragment StoreEntitySet="ParentMasterTbl">
+          <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+          <ScalarProperty Name="ModifiedDate" ColumnName="ModifiedDate" />
+          <ScalarProperty Name="CreateDate" ColumnName="CreateDate" />
+          <ScalarProperty Name="LastFollowUpDate" ColumnName="LastFollowUpDate" />
+          <ScalarProperty Name="ReasonForTermination" ColumnName="ReasonForTermination" />
+          <ScalarProperty Name="TerminationDate" ColumnName="TerminationDate" />
+          <ScalarProperty Name="ExtensionPeriod" ColumnName="ExtensionPeriod" />
+          <ScalarProperty Name="LastExtensionDate" ColumnName="LastExtensionDate" />
+          <ScalarProperty Name="ReasonForFostering" ColumnName="ReasonForFostering" />
+          <ScalarProperty Name="PlacementDate" ColumnName="PlacementDate" />
+          <ScalarProperty Name="BiologicalChildrenCount" ColumnName="BiologicalChildrenCount" />
+          <ScalarProperty Name="AdoptedChildrenCount" ColumnName="AdoptedChildrenCount" />
+          <ScalarProperty Name="ChildSheetFosteredChildrenCount" ColumnName="ChildSheetFosteredChildrenCount" />
+          <ScalarProperty Name="AnyOtherFosters" ColumnName="AnyOtherFosters" />
+          <ScalarProperty Name="RationCardFosterChildrenCount" ColumnName="RationCardFosterChildrenCount" />
+          <ScalarProperty Name="FosterBoysCount" ColumnName="FosterBoysCount" />
+          <ScalarProperty Name="FosterGirlsCount" ColumnName="FosterGirlsCount" />
+          <ScalarProperty Name="ContactNumber" ColumnName="ContactNumber" />
+          <ScalarProperty Name="Address" ColumnName="Address" />
+          <ScalarProperty Name="FosterFathersIncome" ColumnName="FosterFathersIncome" />
+          <ScalarProperty Name="FosterFathersEmploymentStatus" ColumnName="FosterFathersEmploymentStatus" />
+          <ScalarProperty Name="FosterFathersHighestEducation" ColumnName="FosterFathersHighestEducation" />
+          <ScalarProperty Name="FosterFathersCurrentStatus" ColumnName="FosterFathersCurrentStatus" />
+          <ScalarProperty Name="FosterFathersDOB" ColumnName="FosterFathersDOB" />
+          <ScalarProperty Name="FosterFathersName" ColumnName="FosterFathersName" />
+          <ScalarProperty Name="FosterMotherIncome" ColumnName="FosterMotherIncome" />
+          <ScalarProperty Name="FosterMotherEmploymentStatus" ColumnName="FosterMotherEmploymentStatus" />
+          <ScalarProperty Name="FosterMotherHighestEducation" ColumnName="FosterMotherHighestEducation" />
+          <ScalarProperty Name="FosterMotherCurrentStatus" ColumnName="FosterMotherCurrentStatus" />
+          <ScalarProperty Name="FosterMothersDOB" ColumnName="FosterMothersDOB" />
+          <ScalarProperty Name="FosterMothersName" ColumnName="FosterMothersName" />
+          <ScalarProperty Name="ParentCode" ColumnName="ParentCode" />
+          <ScalarProperty Name="FosterParentDistrict" ColumnName="FosterParentDistrict" />
+          <ScalarProperty Name="FosterParentSerialNumber" ColumnName="FosterParentSerialNumber" />
+          <ScalarProperty Name="UserID" ColumnName="UserID" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PermissionMasterTbls">
+      <EntityTypeMapping TypeName="FosterCareDBModel.PermissionMasterTbl">
+        <MappingFragment StoreEntitySet="PermissionMasterTbl">
+          <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+          <ScalarProperty Name="ModuleID" ColumnName="ModuleID" />
+          <ScalarProperty Name="RoleID" ColumnName="RoleID" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PotentialParentMasters">
+      <EntityTypeMapping TypeName="FosterCareDBModel.PotentialParentMaster">
+        <MappingFragment StoreEntitySet="PotentialParentMaster">
+          <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+          <ScalarProperty Name="ModifiedDate" ColumnName="ModifiedDate" />
+          <ScalarProperty Name="CreateDate" ColumnName="CreateDate" />
+          <ScalarProperty Name="AnyQuestion" ColumnName="AnyQuestion" />
+          <ScalarProperty Name="YouWillingToFosterAChild" ColumnName="YouWillingToFosterAChild" />
+          <ScalarProperty Name="IsKnowFosterCare" ColumnName="IsKnowFosterCare" />
+          <ScalarProperty Name="IsLegalCase" ColumnName="IsLegalCase" />
+          <ScalarProperty Name="ChildrenCount" ColumnName="ChildrenCount" />
+          <ScalarProperty Name="DoYouHaveChildren" ColumnName="DoYouHaveChildren" />
+          <ScalarProperty Name="MartialStatus" ColumnName="MartialStatus" />
+          <ScalarProperty Name="ApplicantsHighestEducation" ColumnName="ApplicantsHighestEducation" />
+          <ScalarProperty Name="Age" ColumnName="Age" />
+          <ScalarProperty Name="ApplicantsDOB" ColumnName="ApplicantsDOB" />
+          <ScalarProperty Name="ContactNumber" ColumnName="ContactNumber" />
+          <ScalarProperty Name="ApplicantsAddress" ColumnName="ApplicantsAddress" />
+          <ScalarProperty Name="ApplicantsName" ColumnName="ApplicantsName" />
+          <ScalarProperty Name="SerialNumber" ColumnName="SerialNumber" />
+          <ScalarProperty Name="UserID" ColumnName="UserID" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="RoleMasterTbls">
+      <EntityTypeMapping TypeName="FosterCareDBModel.RoleMasterTbl">
+        <MappingFragment StoreEntitySet="RoleMasterTbl">
+          <ScalarProperty Name="Isactive" ColumnName="Isactive" />
+          <ScalarProperty Name="CreateDate" ColumnName="CreateDate" />
+          <ScalarProperty Name="RoleName" ColumnName="RoleName" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="StateMasterTbls">
+      <EntityTypeMapping TypeName="FosterCareDBModel.StateMasterTbl">
+        <MappingFragment StoreEntitySet="StateMasterTbl">
+          <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+          <ScalarProperty Name="ModifiedDate" ColumnName="ModifiedDate" />
+          <ScalarProperty Name="CreateDate" ColumnName="CreateDate" />
+          <ScalarProperty Name="StateName" ColumnName="StateName" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TehsilMasterTbls">
+      <EntityTypeMapping TypeName="FosterCareDBModel.TehsilMasterTbl">
+        <MappingFragment StoreEntitySet="TehsilMasterTbl">
+          <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+          <ScalarProperty Name="ModifiedDate" ColumnName="ModifiedDate" />
+          <ScalarProperty Name="CreateDate" ColumnName="CreateDate" />
+          <ScalarProperty Name="TehsilName" ColumnName="TehsilName" />
+          <ScalarProperty Name="DistrictID" ColumnName="DistrictID" />
+          <ScalarProperty Name="StateID" ColumnName="StateID" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

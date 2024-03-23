@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="50d538056db246b7bc54e54006a122fe" Name="Diagram1" ZoomLevel="44">
+        <EntityTypeShape EntityType="FosterCareDBModel.AdminLoginTbl" Width="1.5" PointX="6" PointY="48.75" />
+        <EntityTypeShape EntityType="FosterCareDBModel.CCIMasterTbl" Width="1.5" PointX="6" PointY="52.625" />
+        <EntityTypeShape EntityType="FosterCareDBModel.ChildCategoryTbl" Width="1.5" PointX="3" PointY="32.375" />
+        <EntityTypeShape EntityType="FosterCareDBModel.ChildIndividualTbl" Width="1.5" PointX="5.25" PointY="29.875" />
+        <EntityTypeShape EntityType="FosterCareDBModel.ChildInstitutionTbl" Width="1.5" PointX="8.25" PointY="30" />
+        <EntityTypeShape EntityType="FosterCareDBModel.ChildMasterTbl" Width="1.5" PointX="8.25" PointY="37.875" />
+        <EntityTypeShape EntityType="FosterCareDBModel.ChildParentConnectionTbl" Width="1.5" PointX="10.5" PointY="41.5" />
+        <EntityTypeShape EntityType="FosterCareDBModel.DistrictMasterTbl" Width="1.5" PointX="3" PointY="38.5" />
+        <EntityTypeShape EntityType="FosterCareDBModel.EnquiryTbl" Width="1.5" PointX="8.25" PointY="49" />
+        <EntityTypeShape EntityType="FosterCareDBModel.FosterParentTbl" Width="1.5" PointX="11.25" PointY="30.75" />
+        <EntityTypeShape EntityType="FosterCareDBModel.ModuleMasterTbl" Width="1.5" PointX="8.75" PointY="59.375" />
+        <EntityTypeShape EntityType="FosterCareDBModel.ParentMasterTbl" Width="1.5" PointX="5.25" PointY="38.5" />
+        <EntityTypeShape EntityType="FosterCareDBModel.PermissionMasterTbl" Width="1.5" PointX="11" PointY="49.25" />
+        <EntityTypeShape EntityType="FosterCareDBModel.PotentialParentMaster" Width="1.5" PointX="8.25" PointY="52.75" />
+        <EntityTypeShape EntityType="FosterCareDBModel.RoleMasterTbl" Width="1.5" PointX="3.75" PointY="49.25" />
+        <EntityTypeShape EntityType="FosterCareDBModel.StateMasterTbl" Width="1.5" PointX="0.75" PointY="23.875" />
+        <EntityTypeShape EntityType="FosterCareDBModel.TehsilMasterTbl" Width="1.5" PointX="5.25" PointY="25.625" />
+        <AssociationConnector Association="FosterCareDBModel.FK_AdminLoginTbl_RoleMasterTbl" />
+        <AssociationConnector Association="FosterCareDBModel.FK_ChildMasterTbl_AdminLoginTbl" />
+        <AssociationConnector Association="FosterCareDBModel.FK_EnquiryTbl_AdminLoginTbl" />
+        <AssociationConnector Association="FosterCareDBModel.FK_ParentMasterTbl_AdminLoginTbl" />
+        <AssociationConnector Association="FosterCareDBModel.FK_PotentialParentMaster_AdminLoginTbl" />
+        <AssociationConnector Association="FosterCareDBModel.FK_ChildMasterTbl_CCIMasterTbl" />
+        <AssociationConnector Association="FosterCareDBModel.FK_ChildIndividualTbl_ChildCategoryTbl" />
+        <AssociationConnector Association="FosterCareDBModel.FK_ChildInstitutionTbl_ChildCategoryTbl" />
+        <AssociationConnector Association="FosterCareDBModel.FK_ChildIndividualTbl_DistrictMasterTbl" />
+        <AssociationConnector Association="FosterCareDBModel.FK_ChildIndividualTbl_DistrictMasterTbl1" />
+        <AssociationConnector Association="FosterCareDBModel.FK_ChildIndividualTbl_StateMasterTbl" />
+        <AssociationConnector Association="FosterCareDBModel.FK_ChildIndividualTbl_StateMasterTbl1" />
+        <AssociationConnector Association="FosterCareDBModel.FK_ChildIndividualTbl_TehsilMasterTbl" />
+        <AssociationConnector Association="FosterCareDBModel.FK_ChildIndividualTbl_TehsilMasterTbl1" />
+        <AssociationConnector Association="FosterCareDBModel.FK_ChildInstitutionTbl_DistrictMasterTbl" />
+        <AssociationConnector Association="FosterCareDBModel.FK_ChildInstitutionTbl_DistrictMasterTbl1" />
+        <AssociationConnector Association="FosterCareDBModel.FK_ChildInstitutionTbl_StateMasterTbl" />
+        <AssociationConnector Association="FosterCareDBModel.FK_ChildInstitutionTbl_StateMasterTbl1" />
+        <AssociationConnector Association="FosterCareDBModel.FK_ChildInstitutionTbl_TehsilMasterTbl" />
+        <AssociationConnector Association="FosterCareDBModel.FK_ChildInstitutionTbl_TehsilMasterTbl1" />
+        <AssociationConnector Association="FosterCareDBModel.FK_ChildMasterTbl_DistrictMasterTbl" />
+        <AssociationConnector Association="FosterCareDBModel.FK_ChildMasterTbl_DistrictMasterTbl1" />
+        <AssociationConnector Association="FosterCareDBModel.FK_ChildMasterTbl_DistrictMasterTbl2" />
+        <AssociationConnector Association="FosterCareDBModel.FK_ChildMasterTbl_DistrictMasterTbl3" />
+        <AssociationConnector Association="FosterCareDBModel.FK_ChildParentConnectionTbl_ChildMasterTbl" />
+        <AssociationConnector Association="FosterCareDBModel.FK_ChildParentConnectionTbl_ParentMasterTbl" />
+        <AssociationConnector Association="FosterCareDBModel.FK_DistrictMasterTbl_StateMasterTbl" />
+        <AssociationConnector Association="FosterCareDBModel.FK_FosterParentTbl_DistrictMasterTbl" />
+        <AssociationConnector Association="FosterCareDBModel.FK_ParentMasterTbl_DistrictMasterTbl" />
+        <AssociationConnector Association="FosterCareDBModel.FK_TehsilMasterTbl_DistrictMasterTbl" />
+        <AssociationConnector Association="FosterCareDBModel.FK_FosterParentTbl_StateMasterTbl" />
+        <AssociationConnector Association="FosterCareDBModel.FK_PermissionMasterTbl_ModuleMasterTbl" />
+        <AssociationConnector Association="FosterCareDBModel.FK_PermissionMasterTbl_RoleMasterTbl" />
+        <AssociationConnector Association="FosterCareDBModel.FK_TehsilMasterTbl_StateMasterTbl" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

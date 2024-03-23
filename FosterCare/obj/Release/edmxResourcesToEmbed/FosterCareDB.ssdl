@@ -1,0 +1,448 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="FosterCareDBModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="AdminLoginTbl">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="UserName" Type="nvarchar" MaxLength="50" />
+    <Property Name="ContactNumber" Type="nvarchar" MaxLength="50" />
+    <Property Name="Password" Type="nvarchar" MaxLength="50" />
+    <Property Name="Role" Type="bigint" />
+    <Property Name="IsActive" Type="bigint" />
+  </EntityType>
+  <EntityType Name="CCIMasterTbl">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="InstitudeName" Type="nvarchar" MaxLength="100" />
+    <Property Name="CreateDate" Type="smalldatetime" />
+    <Property Name="ModifiedDate" Type="smalldatetime" />
+    <Property Name="IsActive" Type="bigint" />
+  </EntityType>
+  <EntityType Name="ChildMasterTbl">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="UserID" Type="bigint" />
+    <Property Name="SerialNumber" Type="nvarchar" MaxLength="50" />
+    <Property Name="CCIMasterID" Type="bigint" />
+    <Property Name="DistrictID" Type="bigint" />
+    <Property Name="ChildCode" Type="nvarchar" MaxLength="50" />
+    <Property Name="ChildName" Type="nvarchar" MaxLength="50" />
+    <Property Name="Sex" Type="nvarchar" MaxLength="10" />
+    <Property Name="DOB" Type="date" Nullable="false" />
+    <Property Name="Age" Type="float" />
+    <Property Name="Education" Type="nvarchar" MaxLength="50" />
+    <Property Name="SocialGroup" Type="nvarchar" MaxLength="50" />
+    <Property Name="SpecialChild" Type="nvarchar" MaxLength="5" />
+    <Property Name="MothersName" Type="nvarchar" MaxLength="50" />
+    <Property Name="MothersCurrentStatus" Type="nvarchar" MaxLength="100" />
+    <Property Name="FathersName" Type="nvarchar" MaxLength="50" />
+    <Property Name="FathersCurrentStatus" Type="nvarchar" MaxLength="100" />
+    <Property Name="SistersCount" Type="bigint" />
+    <Property Name="BrothersCount" Type="bigint" />
+    <Property Name="SiblingCount" Type="bigint" />
+    <Property Name="CaretakerAddress" Type="nvarchar(max)" />
+    <Property Name="AddressDistrict" Type="bigint" />
+    <Property Name="ContactNumber" Type="nvarchar" MaxLength="50" />
+    <Property Name="ClosestAliveRelative" Type="nvarchar" MaxLength="50" />
+    <Property Name="RelativeAddress" Type="nvarchar" MaxLength="500" />
+    <Property Name="RelativeContactNumber" Type="nvarchar" MaxLength="50" />
+    <Property Name="DataCollectionDate" Type="date" Nullable="false" />
+    <Property Name="ChildCareInstitutionEnrollDate" Type="date" Nullable="false" />
+    <Property Name="ChildConsentToFostering" Type="nvarchar" MaxLength="5" />
+    <Property Name="BiologicalParentsConsentToFostering" Type="nvarchar" MaxLength="5" />
+    <Property Name="InCCIFor" Type="nvarchar" MaxLength="500" />
+    <Property Name="PotentialForFoster" Type="nvarchar" MaxLength="50" />
+    <Property Name="IsFostering" Type="nvarchar" MaxLength="5" />
+    <Property Name="PlacementDistrict" Type="bigint" />
+    <Property Name="MonitoringDistrict" Type="bigint" />
+    <Property Name="LastFollowUpDate" Type="date" Nullable="false" />
+    <Property Name="CreateDate" Type="smalldatetime" />
+    <Property Name="ModifiedDate" Type="smalldatetime" />
+    <Property Name="IsActive" Type="bigint" />
+  </EntityType>
+  <EntityType Name="ChildParentConnectionTbl">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ChildID" Type="bigint" />
+    <Property Name="ParentID" Type="bigint" />
+    <Property Name="CreateDate" Type="smalldatetime" />
+    <Property Name="ModifiedDate" Type="smalldatetime" />
+    <Property Name="IsActive" Type="bigint" />
+  </EntityType>
+  <EntityType Name="DistrictMasterTbl">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="DistrictName" Type="nvarchar" MaxLength="50" />
+    <Property Name="CreateDate" Type="smalldatetime" />
+    <Property Name="ModifiedDate" Type="smalldatetime" />
+    <Property Name="IsActive" Type="bigint" />
+  </EntityType>
+  <EntityType Name="EnquiryTbl">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="UserID" Type="bigint" />
+    <Property Name="Name" Type="nvarchar" MaxLength="50" />
+    <Property Name="ContactNumber" Type="nvarchar" MaxLength="50" />
+    <Property Name="Address" Type="nvarchar(max)" />
+    <Property Name="Message" Type="nvarchar(max)" />
+    <Property Name="CreateDate" Type="smalldatetime" />
+    <Property Name="ModifiedDate" Type="smalldatetime" />
+    <Property Name="IsActive" Type="bigint" />
+  </EntityType>
+  <EntityType Name="ModuleMasterTbl">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ModuleName" Type="nvarchar" MaxLength="50" />
+    <Property Name="URL" Type="nvarchar(max)" />
+    <Property Name="IsActive" Type="bigint" />
+  </EntityType>
+  <EntityType Name="ParentMasterTbl">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="UserID" Type="bigint" />
+    <Property Name="FosterParentSerialNumber" Type="nvarchar" MaxLength="50" />
+    <Property Name="FosterParentDistrict" Type="bigint" />
+    <Property Name="ParentCode" Type="nvarchar" MaxLength="50" />
+    <Property Name="FosterMothersName" Type="nvarchar" MaxLength="50" />
+    <Property Name="FosterMothersDOB" Type="date" Nullable="false" />
+    <Property Name="FosterMotherCurrentStatus" Type="nvarchar" MaxLength="100" />
+    <Property Name="FosterMotherHighestEducation" Type="nvarchar" MaxLength="100" />
+    <Property Name="FosterMotherEmploymentStatus" Type="nvarchar" MaxLength="50" />
+    <Property Name="FosterMotherIncome" Type="nvarchar" MaxLength="50" />
+    <Property Name="FosterFathersName" Type="nvarchar" MaxLength="50" />
+    <Property Name="FosterFathersDOB" Type="date" Nullable="false" />
+    <Property Name="FosterFathersCurrentStatus" Type="nvarchar" MaxLength="100" />
+    <Property Name="FosterFathersHighestEducation" Type="nvarchar" MaxLength="100" />
+    <Property Name="FosterFathersEmploymentStatus" Type="nvarchar" MaxLength="50" />
+    <Property Name="FosterFathersIncome" Type="nvarchar" MaxLength="50" />
+    <Property Name="Address" Type="nvarchar(max)" />
+    <Property Name="ContactNumber" Type="nvarchar" MaxLength="50" />
+    <Property Name="FosterGirlsCount" Type="bigint" />
+    <Property Name="FosterBoysCount" Type="bigint" />
+    <Property Name="RationCardFosterChildrenCount" Type="bigint" />
+    <Property Name="AnyOtherFosters" Type="nvarchar" MaxLength="5" />
+    <Property Name="ChildSheetFosteredChildrenCount" Type="bigint" />
+    <Property Name="AdoptedChildrenCount" Type="bigint" />
+    <Property Name="BiologicalChildrenCount" Type="bigint" />
+    <Property Name="PlacementDate" Type="date" Nullable="false" />
+    <Property Name="ReasonForFostering" Type="nvarchar" MaxLength="500" />
+    <Property Name="LastExtensionDate" Type="date" Nullable="false" />
+    <Property Name="ExtensionPeriod" Type="nvarchar" MaxLength="50" />
+    <Property Name="TerminationDate" Type="date" Nullable="false" />
+    <Property Name="ReasonForTermination" Type="nvarchar(max)" />
+    <Property Name="LastFollowUpDate" Type="date" Nullable="false" />
+    <Property Name="CreateDate" Type="smalldatetime" />
+    <Property Name="ModifiedDate" Type="smalldatetime" />
+    <Property Name="IsActive" Type="bigint" />
+  </EntityType>
+  <EntityType Name="PermissionMasterTbl">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="RoleID" Type="bigint" />
+    <Property Name="ModuleID" Type="bigint" />
+    <Property Name="IsActive" Type="bigint" />
+  </EntityType>
+  <EntityType Name="PotentialParentMaster">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="UserID" Type="bigint" />
+    <Property Name="SerialNumber" Type="nvarchar" MaxLength="10" />
+    <Property Name="ApplicantsName" Type="nvarchar" MaxLength="50" />
+    <Property Name="ApplicantsAddress" Type="nvarchar(max)" />
+    <Property Name="ContactNumber" Type="nvarchar" MaxLength="50" />
+    <Property Name="ApplicantsDOB" Type="date" Nullable="false" />
+    <Property Name="Age" Type="float" />
+    <Property Name="ApplicantsHighestEducation" Type="nvarchar" MaxLength="50" />
+    <Property Name="MartialStatus" Type="nvarchar" MaxLength="20" />
+    <Property Name="DoYouHaveChildren" Type="nvarchar" MaxLength="10" />
+    <Property Name="ChildrenCount" Type="bigint" />
+    <Property Name="IsLegalCase" Type="nvarchar" MaxLength="10" />
+    <Property Name="IsKnowFosterCare" Type="nvarchar" MaxLength="10" />
+    <Property Name="YouWillingToFosterAChild" Type="nvarchar" MaxLength="10" />
+    <Property Name="AnyQuestion" Type="nvarchar(max)" />
+    <Property Name="CreateDate" Type="smalldatetime" />
+    <Property Name="ModifiedDate" Type="smalldatetime" />
+    <Property Name="IsActive" Type="bigint" />
+  </EntityType>
+  <EntityType Name="RoleMasterTbl">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="RoleName" Type="nvarchar" MaxLength="50" />
+    <Property Name="CreateDate" Type="smalldatetime" />
+    <Property Name="Isactive" Type="bigint" />
+  </EntityType>
+  <Association Name="FK_AdminLoginTbl_RoleMasterTbl">
+    <End Role="RoleMasterTbl" Type="Self.RoleMasterTbl" Multiplicity="0..1" />
+    <End Role="AdminLoginTbl" Type="Self.AdminLoginTbl" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="RoleMasterTbl">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="AdminLoginTbl">
+        <PropertyRef Name="Role" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ChildMasterTbl_AdminLoginTbl">
+    <End Role="AdminLoginTbl" Type="Self.AdminLoginTbl" Multiplicity="0..1" />
+    <End Role="ChildMasterTbl" Type="Self.ChildMasterTbl" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="AdminLoginTbl">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="ChildMasterTbl">
+        <PropertyRef Name="UserID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ChildMasterTbl_CCIMasterTbl">
+    <End Role="CCIMasterTbl" Type="Self.CCIMasterTbl" Multiplicity="0..1" />
+    <End Role="ChildMasterTbl" Type="Self.ChildMasterTbl" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="CCIMasterTbl">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="ChildMasterTbl">
+        <PropertyRef Name="CCIMasterID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ChildMasterTbl_DistrictMasterTbl">
+    <End Role="DistrictMasterTbl" Type="Self.DistrictMasterTbl" Multiplicity="0..1" />
+    <End Role="ChildMasterTbl" Type="Self.ChildMasterTbl" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="DistrictMasterTbl">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="ChildMasterTbl">
+        <PropertyRef Name="DistrictID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ChildMasterTbl_DistrictMasterTbl1">
+    <End Role="DistrictMasterTbl" Type="Self.DistrictMasterTbl" Multiplicity="0..1" />
+    <End Role="ChildMasterTbl" Type="Self.ChildMasterTbl" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="DistrictMasterTbl">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="ChildMasterTbl">
+        <PropertyRef Name="PlacementDistrict" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ChildMasterTbl_DistrictMasterTbl2">
+    <End Role="DistrictMasterTbl" Type="Self.DistrictMasterTbl" Multiplicity="0..1" />
+    <End Role="ChildMasterTbl" Type="Self.ChildMasterTbl" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="DistrictMasterTbl">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="ChildMasterTbl">
+        <PropertyRef Name="MonitoringDistrict" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ChildMasterTbl_DistrictMasterTbl3">
+    <End Role="DistrictMasterTbl" Type="Self.DistrictMasterTbl" Multiplicity="0..1" />
+    <End Role="ChildMasterTbl" Type="Self.ChildMasterTbl" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="DistrictMasterTbl">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="ChildMasterTbl">
+        <PropertyRef Name="AddressDistrict" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ChildParentConnectionTbl_ChildMasterTbl">
+    <End Role="ChildMasterTbl" Type="Self.ChildMasterTbl" Multiplicity="0..1" />
+    <End Role="ChildParentConnectionTbl" Type="Self.ChildParentConnectionTbl" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ChildMasterTbl">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="ChildParentConnectionTbl">
+        <PropertyRef Name="ChildID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ChildParentConnectionTbl_ParentMasterTbl">
+    <End Role="ParentMasterTbl" Type="Self.ParentMasterTbl" Multiplicity="0..1" />
+    <End Role="ChildParentConnectionTbl" Type="Self.ChildParentConnectionTbl" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ParentMasterTbl">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="ChildParentConnectionTbl">
+        <PropertyRef Name="ParentID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_EnquiryTbl_AdminLoginTbl">
+    <End Role="AdminLoginTbl" Type="Self.AdminLoginTbl" Multiplicity="0..1" />
+    <End Role="EnquiryTbl" Type="Self.EnquiryTbl" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="AdminLoginTbl">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="EnquiryTbl">
+        <PropertyRef Name="UserID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ParentMasterTbl_AdminLoginTbl">
+    <End Role="AdminLoginTbl" Type="Self.AdminLoginTbl" Multiplicity="0..1" />
+    <End Role="ParentMasterTbl" Type="Self.ParentMasterTbl" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="AdminLoginTbl">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="ParentMasterTbl">
+        <PropertyRef Name="UserID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ParentMasterTbl_DistrictMasterTbl">
+    <End Role="DistrictMasterTbl" Type="Self.DistrictMasterTbl" Multiplicity="0..1" />
+    <End Role="ParentMasterTbl" Type="Self.ParentMasterTbl" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="DistrictMasterTbl">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="ParentMasterTbl">
+        <PropertyRef Name="FosterParentDistrict" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_PermissionMasterTbl_ModuleMasterTbl">
+    <End Role="ModuleMasterTbl" Type="Self.ModuleMasterTbl" Multiplicity="0..1" />
+    <End Role="PermissionMasterTbl" Type="Self.PermissionMasterTbl" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ModuleMasterTbl">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="PermissionMasterTbl">
+        <PropertyRef Name="ModuleID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_PermissionMasterTbl_RoleMasterTbl">
+    <End Role="RoleMasterTbl" Type="Self.RoleMasterTbl" Multiplicity="0..1" />
+    <End Role="PermissionMasterTbl" Type="Self.PermissionMasterTbl" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="RoleMasterTbl">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="PermissionMasterTbl">
+        <PropertyRef Name="RoleID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_PotentialParentMaster_AdminLoginTbl">
+    <End Role="AdminLoginTbl" Type="Self.AdminLoginTbl" Multiplicity="0..1" />
+    <End Role="PotentialParentMaster" Type="Self.PotentialParentMaster" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="AdminLoginTbl">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="PotentialParentMaster">
+        <PropertyRef Name="UserID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="FosterCareDBModelStoreContainer">
+    <EntitySet Name="AdminLoginTbl" EntityType="Self.AdminLoginTbl" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="CCIMasterTbl" EntityType="Self.CCIMasterTbl" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ChildMasterTbl" EntityType="Self.ChildMasterTbl" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ChildParentConnectionTbl" EntityType="Self.ChildParentConnectionTbl" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="DistrictMasterTbl" EntityType="Self.DistrictMasterTbl" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="EnquiryTbl" EntityType="Self.EnquiryTbl" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ModuleMasterTbl" EntityType="Self.ModuleMasterTbl" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ParentMasterTbl" EntityType="Self.ParentMasterTbl" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="PermissionMasterTbl" EntityType="Self.PermissionMasterTbl" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="PotentialParentMaster" EntityType="Self.PotentialParentMaster" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="RoleMasterTbl" EntityType="Self.RoleMasterTbl" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK_AdminLoginTbl_RoleMasterTbl" Association="Self.FK_AdminLoginTbl_RoleMasterTbl">
+      <End Role="RoleMasterTbl" EntitySet="RoleMasterTbl" />
+      <End Role="AdminLoginTbl" EntitySet="AdminLoginTbl" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ChildMasterTbl_AdminLoginTbl" Association="Self.FK_ChildMasterTbl_AdminLoginTbl">
+      <End Role="AdminLoginTbl" EntitySet="AdminLoginTbl" />
+      <End Role="ChildMasterTbl" EntitySet="ChildMasterTbl" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ChildMasterTbl_CCIMasterTbl" Association="Self.FK_ChildMasterTbl_CCIMasterTbl">
+      <End Role="CCIMasterTbl" EntitySet="CCIMasterTbl" />
+      <End Role="ChildMasterTbl" EntitySet="ChildMasterTbl" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ChildMasterTbl_DistrictMasterTbl" Association="Self.FK_ChildMasterTbl_DistrictMasterTbl">
+      <End Role="DistrictMasterTbl" EntitySet="DistrictMasterTbl" />
+      <End Role="ChildMasterTbl" EntitySet="ChildMasterTbl" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ChildMasterTbl_DistrictMasterTbl1" Association="Self.FK_ChildMasterTbl_DistrictMasterTbl1">
+      <End Role="DistrictMasterTbl" EntitySet="DistrictMasterTbl" />
+      <End Role="ChildMasterTbl" EntitySet="ChildMasterTbl" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ChildMasterTbl_DistrictMasterTbl2" Association="Self.FK_ChildMasterTbl_DistrictMasterTbl2">
+      <End Role="DistrictMasterTbl" EntitySet="DistrictMasterTbl" />
+      <End Role="ChildMasterTbl" EntitySet="ChildMasterTbl" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ChildMasterTbl_DistrictMasterTbl3" Association="Self.FK_ChildMasterTbl_DistrictMasterTbl3">
+      <End Role="DistrictMasterTbl" EntitySet="DistrictMasterTbl" />
+      <End Role="ChildMasterTbl" EntitySet="ChildMasterTbl" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ChildParentConnectionTbl_ChildMasterTbl" Association="Self.FK_ChildParentConnectionTbl_ChildMasterTbl">
+      <End Role="ChildMasterTbl" EntitySet="ChildMasterTbl" />
+      <End Role="ChildParentConnectionTbl" EntitySet="ChildParentConnectionTbl" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ChildParentConnectionTbl_ParentMasterTbl" Association="Self.FK_ChildParentConnectionTbl_ParentMasterTbl">
+      <End Role="ParentMasterTbl" EntitySet="ParentMasterTbl" />
+      <End Role="ChildParentConnectionTbl" EntitySet="ChildParentConnectionTbl" />
+    </AssociationSet>
+    <AssociationSet Name="FK_EnquiryTbl_AdminLoginTbl" Association="Self.FK_EnquiryTbl_AdminLoginTbl">
+      <End Role="AdminLoginTbl" EntitySet="AdminLoginTbl" />
+      <End Role="EnquiryTbl" EntitySet="EnquiryTbl" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ParentMasterTbl_AdminLoginTbl" Association="Self.FK_ParentMasterTbl_AdminLoginTbl">
+      <End Role="AdminLoginTbl" EntitySet="AdminLoginTbl" />
+      <End Role="ParentMasterTbl" EntitySet="ParentMasterTbl" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ParentMasterTbl_DistrictMasterTbl" Association="Self.FK_ParentMasterTbl_DistrictMasterTbl">
+      <End Role="DistrictMasterTbl" EntitySet="DistrictMasterTbl" />
+      <End Role="ParentMasterTbl" EntitySet="ParentMasterTbl" />
+    </AssociationSet>
+    <AssociationSet Name="FK_PermissionMasterTbl_ModuleMasterTbl" Association="Self.FK_PermissionMasterTbl_ModuleMasterTbl">
+      <End Role="ModuleMasterTbl" EntitySet="ModuleMasterTbl" />
+      <End Role="PermissionMasterTbl" EntitySet="PermissionMasterTbl" />
+    </AssociationSet>
+    <AssociationSet Name="FK_PermissionMasterTbl_RoleMasterTbl" Association="Self.FK_PermissionMasterTbl_RoleMasterTbl">
+      <End Role="RoleMasterTbl" EntitySet="RoleMasterTbl" />
+      <End Role="PermissionMasterTbl" EntitySet="PermissionMasterTbl" />
+    </AssociationSet>
+    <AssociationSet Name="FK_PotentialParentMaster_AdminLoginTbl" Association="Self.FK_PotentialParentMaster_AdminLoginTbl">
+      <End Role="AdminLoginTbl" EntitySet="AdminLoginTbl" />
+      <End Role="PotentialParentMaster" EntitySet="PotentialParentMaster" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

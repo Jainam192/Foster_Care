@@ -1,0 +1,296 @@
+﻿@model FosterCare.ChildInstitutionTbl
+
+@{
+    ViewBag.Title = "Edit";
+    Layout = "~/Areas/Admin/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<script>
+    function readURL(input) {
+        if (input.files && input.files[0]) {
+            var reader = new FileReader();
+            reader.onload = function (e) {
+                $('#imgpreview').attr('src', e.target.result);
+            }
+            reader.readAsDataURL(input.files[0]); // convert to base64 string
+        }
+    }
+    function GetDistrictByState() {
+        var StateID = $('#StateID').val();
+        $.ajax({
+            url: '/ChildInstitution/GetDistrictByState',
+            type: "POST",
+            dataType: "JSON",
+            data: { StateID: StateID },
+            success: function (response) {
+                console.log(response);
+                $("#DistrictID").html("");
+                if (response.length != 0) {
+                    $('#DistrictID').append(new Option("--Select District--", ""));
+                    $.each(response, function (i, GramPanchayatID) {
+                        $('#DistrictID').append(new Option(GramPanchayatID.Text, GramPanchayatID.Value));
+                    });
+                }
+                else {
+                    $('#DistrictID').append(new Option("---No District Found !---", ""));
+                }
+            }
+        });
+    }
+
+    function GetDistrictByStateChild() {
+        var ChildStateId = $('#ChildStateId').val();
+        $.ajax({
+            url: '/ChildInstitution/GetDistrictByState',
+            type: "POST",
+            dataType: "JSON",
+            data: { StateID: ChildStateId },
+            success: function (response) {
+                console.log(response);
+                $("#ChildDistrictId").html("");
+                if (response.length != 0) {
+                    $('#ChildDistrictId').append(new Option("--Select District--", ""));
+                    $.each(response, function (i, GramPanchayatID) {
+                        $('#ChildDistrictId').append(new Option(GramPanchayatID.Text, GramPanchayatID.Value));
+                    });
+                }
+                else {
+                    $('#ChildDistrictId').append(new Option("---No District Found !---", ""));
+                }
+            }
+        });
+    }
+
+    function GetTehsilByDistrict() {
+        var DistrictID = $('#DistrictID').val();
+        $.ajax({
+            url: '/ChildInstitution/GetTehsilByDistrict',
+            type: "POST",
+            dataType: "JSON",
+            data: { DistrictID: DistrictID },
+            success: function (response) {
+                $("#TehsilID").html("");
+                if (response.length != 0) {
+                    $('#TehsilID').append(new Option("--Select Tehsil--", ""));
+                    $.each(response, function (i, TehsilID) {
+                        $('#TehsilID').append(new Option(TehsilID.Text, TehsilID.Value));
+                    });
+                }
+                else {
+                    $('#TehsilID').append(new Option("---No Tehsil Found !---", ""));
+                }
+            }
+        });
+    }
+
+    function GetTehsilByDistrictChild() {
+        var ChildDistrictId = $('#ChildDistrictId').val();
+        $.ajax({
+            url: '/ChildInstitution/GetTehsilByDistrict',
+            type: "POST",
+            dataType: "JSON",
+            data: { DistrictID: ChildDistrictId },
+            success: function (response) {
+                $("#ChildTehsil").html("");
+                if (response.length != 0) {
+                    $('#ChildTehsil').append(new Option("--Select Tehsil--", ""));
+                    $.each(response, function (i, TehsilID) {
+                        $('#ChildTehsil').append(new Option(TehsilID.Text, TehsilID.Value));
+                    });
+                }
+                else {
+                    $('#ChildTehsil').append(new Option("---No Tehsil Found !---", ""));
+                }
+            }
+        });
+    }
+
+    function GetChildCategory(val) {
+        console.log(val);
+        if (val == 7) {
+            $('#physicallyillness').css("display", "");
+        }
+        else {
+            $('#physicallyillness').css("display", "none");
+        }
+    }
+
+    function SetOther(val1) {
+        console.log(val1);
+        if (val == 'Other') {
+            $('#other').css("display", "");
+        }
+        else {
+            $('#other').css("display", "none");
+        }
+    }
+
+</script>
+
+<section class="content-header">
+    <h1>Edit CCI Master<small>(Edit CCI Master)</small></h1>
+</section>
+<section class="content">
+    @using (Html.BeginForm("Edit", "ChildInstitution", FormMethod.Post))
+    {
+        @Html.AntiForgeryToken()
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+        @Html.HiddenFor(model => model.Id)
+        @Html.HiddenFor(model => model.IsActive)
+        @Html.HiddenFor(model => model.CreateDate)
+        @Html.HiddenFor(model => model.ChildImage)
+        <div class="row">
+            <div class="col-md-12">
+                <div class="box box-warning">
+                    <div class="box-body">
+
+                        <div class="form-group">
+                            <label>Name Of The Organization</label>
+                            @Html.EditorFor(model => model.NameOfTheOrganization, new { htmlAttributes = new { @class = "form-control", required = "required" } })
+                            @Html.ValidationMessageFor(model => model.NameOfTheOrganization, "", new { @class = "text-danger" })
+                        </div>
+
+                        <div class="form-group">
+                            <label>Type Of Organization</label>
+                            @Html.EditorFor(model => model.TypeOfOrganization, new { htmlAttributes = new { @class = "form-control", required = "required" } })
+                            @Html.ValidationMessageFor(model => model.TypeOfOrganization, "", new { @class = "text-danger" })
+                        </div>
+
+                        <div class="form-group">
+                            <label>Name Of Employee</label>
+                            @Html.EditorFor(model => model.NameOfEmployee, new { htmlAttributes = new { @class = "form-control", required = "required" } })
+                            @Html.ValidationMessageFor(model => model.NameOfEmployee, "", new { @class = "text-danger" })
+                        </div>
+
+                        <div class="form-group">
+                            <label>Designation Of The Employee</label>
+                            @Html.EditorFor(model => model.DesignationOfTheEmployee, new { htmlAttributes = new { @class = "form-control", required = "required" } })
+                            @Html.ValidationMessageFor(model => model.DesignationOfTheEmployee, "", new { @class = "text-danger" })
+                        </div>
+                        <div class="form-group">
+                            <label>State Name</label>
+                            @Html.DropDownList("StateID", null, "--Select--", htmlAttributes: new { @class = "form-control", onchange = "GetDistrictByState()", required = "required" })
+                            @Html.ValidationMessageFor(model => model.StateID, "", new { @class = "text-danger" })
+                        </div>
+
+                        <div class="form-group">
+                            <label>District Name</label>
+                            @Html.DropDownList("DistrictID", null, "--Select--", htmlAttributes: new { @class = "form-control", onchange = "GetTehsilByDistrict()", required = "required" })
+                            @Html.ValidationMessageFor(model => model.DistrictID, "", new { @class = "text-danger" })
+                        </div>
+
+                        <div class="form-group">
+                            <label>Tehsil Name</label>
+                            @Html.DropDownList("TehsilID", null, "--Select--", htmlAttributes: new { @class = "form-control", required = "required" })
+                            @Html.ValidationMessageFor(model => model.TehsilID, "", new { @class = "text-danger" })
+                        </div>
+
+                        <div class="form-group">
+                            <label>Child Name</label>
+                            @Html.EditorFor(model => model.ChildName, new { htmlAttributes = new { @class = "form-control", required = "required" } })
+                            @Html.ValidationMessageFor(model => model.ChildName, "", new { @class = "text-danger" })
+                        </div>
+
+                        <div class="form-group">
+                            <label>Child Age</label>
+                            @Html.EditorFor(model => model.ChildAge, new { htmlAttributes = new { @class = "form-control", required = "required" } })
+                            @Html.ValidationMessageFor(model => model.ChildAge, "", new { @class = "text-danger" })
+
+                        </div>
+
+                        <div class="form-group">
+                            <label>Child Gender</label>
+                            @Html.DropDownList("ChildGender", new List<SelectListItem>
+                                      {
+                                            new SelectListItem { Text = "Boy", Value = "Boy", },
+                                             new SelectListItem { Text = "Girl", Value = "Girl", },
+
+
+                                      }, "----Select----", htmlAttributes: new { @class = "form-control", required = "required" })
+                        </div>
+
+                        <div class="form-group">
+                            <label>Child State Name</label>
+                            @Html.DropDownList("ChildStateId", null, "--Select--", htmlAttributes: new { @class = "form-control", onchange = "GetDistrictByStateChild()", required = "required" })
+                            @Html.ValidationMessageFor(model => model.ChildStateId, "", new { @class = "text-danger" })
+                        </div>
+
+                        <div class="form-group">
+                            <label>Child District Name</label>
+                            @Html.DropDownList("ChildDistrictId", null, "--Select--", htmlAttributes: new { @class = "form-control", onchange = "GetTehsilByDistrictChild()", required = "required" })
+                            @Html.ValidationMessageFor(model => model.ChildDistrictId, "", new { @class = "text-danger" })
+
+                        </div>
+
+                        <div class="form-group">
+                            <label>Tehsil Name</label>
+                            @Html.DropDownList("ChildTehsil", null, "--Select--", htmlAttributes: new { @class = "form-control", required = "required" })
+                            @Html.ValidationMessageFor(model => model.ChildTehsil, "", new { @class = "text-danger" })
+                        </div>
+
+                        <div class="form-group">
+                            <label>Father Name</label>
+                            @Html.EditorFor(model => model.FatherName, new { htmlAttributes = new { @class = "form-control", required = "required" } })
+                            @Html.ValidationMessageFor(model => model.FatherName, "", new { @class = "text-danger" })
+                        </div>
+
+                        <div class="form-group">
+                            <label>Mother Name</label>
+                            @Html.EditorFor(model => model.MotherName, new { htmlAttributes = new { @class = "form-control", required = "required" } })
+                            @Html.ValidationMessageFor(model => model.MotherName, "", new { @class = "text-danger" })
+                        </div>
+
+                        <div class="form-group">
+                            <label>Social Category</label>
+                            @Html.DropDownList("SocialCategory", new List<SelectListItem>
+                                      {
+                                            new SelectListItem { Text = "Gen", Value = "Gen", },
+                                             new SelectListItem { Text = "ST", Value = "ST", },
+                                            new SelectListItem { Text = "SC", Value = "SC"},
+                                            new SelectListItem { Text = "OBC", Value = "OBC"},
+
+                                      }, "----Select----", htmlAttributes: new { @class = "form-control", required = "required" })
+                        </div>
+
+                        <div class="form-group">
+                            <label>Category Of Child</label>
+                            @Html.DropDownList("CategoryOfChild", null, "--Select--", htmlAttributes: new { @class = "form-control", @onchange = "GetChildCategory(this.value)", required = "required" })
+                        </div>
+
+                        <div class="form-group" id="physicallyillness" style="display:none">
+                            <label>Physically illness</label>
+                            <input type="radio" id="Otherillnesss" name="Otherillnesss" value="1" class="form-control" onchange="SetOther(this.Value)" />
+                            <input type="radio" id="Otherillnesss" name="Otherillnesss" value="2" class="form-control" onchange="SetOther(this.Value)" />
+                            <input type="radio" id="Otherillnesss" name="Otherillnesss" value="3" class="form-control" onchange="SetOther(this.value)" />
+                            <input type="radio" id="Otherillnesss" name="Otherillnesss" value="4" class="form-control" onclick="SetOther(this)" />
+                        </div>
+
+
+                        <div class="form-group" id="other" style="display:none">
+                            <label>Otherillness</label>
+                            @Html.EditorFor(model => model.Otherillness, new { htmlAttributes = new { @class = "form-control" } })
+                            @Html.ValidationMessageFor(model => model.Otherillness, "", new { @class = "text-danger" })
+                        </div>
+
+                        <div class="form-group">
+                            <label>Child Image</label>
+                            <input id="ChildImage" onchange="readURL(this);" type="file" name="ChildImage" src="@Model.ChildImage" />
+                            <img id="imgpreview" class="img-thumbnail" style="width:200px" alt="Preview" src="@Model.ChildImage"/>
+                        </div>
+
+                        <div class="form-group">
+                            <div class="box-footer">
+                                <input type="submit" value="Update" class="btn btn-primary" />
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    }
+    <div>
+        <a href="/Admin/RoleMaster/Index" class="btn btn-dropbox">Back to List</a>
+    </div>
+</section>
+

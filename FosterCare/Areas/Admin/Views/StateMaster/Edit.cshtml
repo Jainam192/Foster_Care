@@ -1,0 +1,44 @@
+﻿@model FosterCare.StateMasterTbl
+
+@{
+    ViewBag.Title = "Edit";
+    Layout = "~/Areas/Admin/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<section class="content-header">
+    <h1>Edit State Master<small>(Edit State Master)</small></h1>
+</section>
+<section class="content">
+    @using (Html.BeginForm("Edit", "StateMaster", FormMethod.Post))
+    {
+        @Html.AntiForgeryToken()
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+        @Html.HiddenFor(model => model.Id)
+        @Html.HiddenFor(model => model.IsActive)
+        @Html.HiddenFor(model => model.CreateDate)
+        <div class="row">
+            <div class="col-md-12">
+                <div class="box box-warning">
+                    <div class="box-body">
+                        <div class="form-group">
+                            <label>State Name</label>
+                                @Html.EditorFor(model => model.StateName, new { htmlAttributes = new { @class = "form-control" , required="required"} })
+                                @Html.ValidationMessageFor(model => model.StateName, "", new { @class = "text-danger" })
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <div class="box-footer">
+                                <input type="submit" value="Update" class="btn btn-primary" />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+       
+    }
+    <div>
+        <a href="/Admin/StateMaster/Index" class="btn btn-dropbox">Back to List</a>
+    </div>
+</section>
+

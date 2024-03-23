@@ -1,0 +1,349 @@
+﻿@model FosterCare.ChildMasterTbl
+
+@{
+    ViewBag.Title = "Edit";
+    Layout = "~/Areas/Admin/Views/Shared/_LayoutAdmin.cshtml";
+}
+<script>
+    function calculate_age(dob) {
+        var dobdate = new Date(dob);
+        var currentDate = new Date();
+        var totalmonths = monthDiff(new Date(dobdate.getFullYear(), dob.getMonth()), new Date(currentDate.getFullYear(), currentDate.getMonth()));
+
+        var totalyears = parseInt(totalmonths / 12);
+        var months = totalmonths % 12;
+        var age = totalyears + "." + months;
+        return document.getElementById("Age").value = age;
+    }
+
+    function monthDiff(dateFrom, dateTo) {
+        return dateTo.getMonth() - dateFrom.getMonth() +
+            (12 * (dateTo.getFullYear() - dateFrom.getFullYear()))
+    }
+
+</script>
+<script>
+    function PhoneNumberValidation() {
+        var mobileno = /^((\\+91-?)|0)?[0-9]{10}$/;
+        var txtmob = document.getElementById("ContactNumber").value;
+        if (txtmob.match(mobileno)) {
+            document.getElementById("msg").innerHTML = "";
+        }
+        else {
+            document.getElementById("msg").innerHTML = "Invalid Contact Number";
+            document.getElementById("ContactNumber").value = "";
+        }
+    }
+</script>
+<script>
+    function PhoneNumberValidation1() {
+        var mobileno = /^((\\+91-?)|0)?[0-9]{10}$/;
+        var txtmob = document.getElementById("RelativeContactNumber").value;
+        if (txtmob.match(mobileno)) {
+            document.getElementById("msgRelative").innerHTML = "";
+        }
+        else {
+            document.getElementById("msgRelative").innerHTML = "Invalid Contact Number";
+            document.getElementById("RelativeContactNumber").value = "";
+        }
+    }
+</script>
+<section class="content-header">
+    <h1>Edit Child<small>(Edit Child)</small></h1>
+</section>
+<section class="content">
+    @using (Html.BeginForm("Edit", "ChildMaster", FormMethod.Post))
+    {
+        @Html.AntiForgeryToken()
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+        @Html.HiddenFor(model => model.ID)
+        @Html.HiddenFor(model => model.IsActive)
+        @Html.HiddenFor(model => model.CreateDate)
+        @Html.HiddenFor(model => model.UserID)
+        <div class="row">
+            <div class="col-md-12">
+                <div class="box box-warning">
+                    <div class="box-body">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label>Serial Number</label>
+                                    @Html.EditorFor(model => model.SerialNumber, new { htmlAttributes = new { @class = "form-control", required = "required" } })
+                                    @Html.ValidationMessageFor(model => model.SerialNumber, "", new { @class = "text-danger" })
+                                </div>
+
+                                <div class="form-group">
+                                    <label>Institude Name</label>
+                                    @Html.DropDownList("CCIMasterID", null, "----Select----", htmlAttributes: new { @class = "form-control", required = "required" })
+                                    @Html.ValidationMessageFor(model => model.CCIMasterID, "", new { @class = "text-danger" })
+                                </div>
+
+                                <div class="form-group">
+                                    <label>CCI District Name</label>
+                                    @Html.DropDownList("DistrictID", null, "----Select----", htmlAttributes: new { @class = "form-control", required = "required" })
+                                    @Html.ValidationMessageFor(model => model.DistrictID, "", new { @class = "text-danger" })
+                                </div>
+
+                                <div class="form-group">
+                                    <label>Child Code</label>
+                                    @Html.EditorFor(model => model.ChildCode, new { htmlAttributes = new { @class = "form-control", required = "required" } })
+                                    @Html.ValidationMessageFor(model => model.ChildCode, "", new { @class = "text-danger" })
+                                </div>
+
+                                <div class="form-group">
+                                    <label>Child Name</label>
+                                    @Html.EditorFor(model => model.ChildName, new { htmlAttributes = new { @class = "form-control", required = "required" } })
+                                    @Html.ValidationMessageFor(model => model.ChildName, "", new { @class = "text-danger" })
+                                </div>
+
+                                <div class="form-group">
+                                    <label>Sex</label>
+                                    @Html.DropDownList("Sex", new List<SelectListItem>
+                                              {
+                                                    new SelectListItem { Text = "Boy", Value = "Boy", },
+                                                    new SelectListItem { Text = "Girl", Value = "Girl"},
+                                              }, "----Select----", htmlAttributes: new { @class = "form-control", required = "required" })
+                                </div>
+
+                                <div class="form-group">
+                                    <label>DOB</label>
+                                    @Html.EditorFor(model => model.DOB, new { htmlAttributes = new { @Value = @Model.DOB.ToString("yyy-MM-dd"), @class = "form-control", required = "require", type = "date", onchange = "calculate_age(new Date(this.value))" } })
+                                    @Html.ValidationMessageFor(model => model.DOB, "", new { @class = "text-danger" })
+                                </div>
+
+                                <div class="form-group">
+                                    <label>Age</label>
+                                    @Html.EditorFor(model => model.Age, new { htmlAttributes = new { @class = "form-control", required = "required" } })
+                                    @Html.ValidationMessageFor(model => model.Age, "", new { @class = "text-danger" })
+                                </div>
+
+                                <div class="form-group">
+                                    <label>Education</label>
+                                    @Html.DropDownList("Education", new List<SelectListItem>
+                                     {
+                                    new SelectListItem { Text = "No Educated", Value = "No Educated"},
+                                           new SelectListItem { Text = "Nursery", Value = "Nursery", },
+                                           new SelectListItem { Text = "L.K.G", Value = "L.K.G"},
+                                           new SelectListItem { Text = "U.K.G", Value = "U.K.G"},
+                                           new SelectListItem { Text = "1st", Value = "1st"},
+                                           new SelectListItem { Text = "2nd", Value = "2nd"},
+                                           new SelectListItem { Text = "3rd", Value = "3rd"},
+                                           new SelectListItem { Text = "4th", Value = "4th"},
+                                           new SelectListItem { Text = "5th", Value = "5th"},
+                                           new SelectListItem { Text = "6th", Value = "6th"},
+                                           new SelectListItem { Text = "7th", Value = "7th"},
+                                           new SelectListItem { Text = "8th", Value = "8th"},
+                                           new SelectListItem { Text = "9th", Value = "9th"},
+                                           new SelectListItem { Text = "10th", Value = "10th"},
+                                           new SelectListItem { Text = "11th", Value = "11th"},
+                                           new SelectListItem { Text = "12th", Value = "12th"},
+
+                                     }, "----Select----", htmlAttributes: new { @class = "form-control", required = "required" })
+                                </div>
+
+                                <div class="form-group">
+                                    <label>Social Group</label>
+                                    @Html.DropDownList("SocialGroup", new List<SelectListItem>
+                                      {
+                                            new SelectListItem { Text = "Scheduled Caste(SC)", Value = "Scheduled Caste(SC)" },
+                                            new SelectListItem { Text = "Scheduled Tribe(ST)", Value = "Scheduled Tribe(ST)"},
+                                            new SelectListItem { Text = "Other Backward Class(OBC)", Value = "Other Backward Class(OBC)"},
+                                            new SelectListItem { Text = "General", Value = "General"},
+                                                new SelectListItem { Text = "Other", Value = "Other"}
+                                      }, "----Select----", htmlAttributes: new { @class = "form-control", required = "required" })
+                                </div>
+
+                                <div class="form-group">
+                                    <label>Special Child</label>
+                                    @Html.DropDownList("SpecialChild", new List<SelectListItem>
+                                      {
+                                            new SelectListItem { Text = "Yes", Value = "Yes", },
+                                            new SelectListItem { Text = "No", Value = "No"},
+                                      }, "----Select----", htmlAttributes: new { @class = "form-control", required = "required" })
+                                </div>
+
+                                <div class="form-group">
+                                    <label>Mother Name</label>
+                                    @Html.EditorFor(model => model.MothersName, new { htmlAttributes = new { @class = "form-control", required = "required" } })
+                                    @Html.ValidationMessageFor(model => model.MothersName, "", new { @class = "text-danger" })
+                                </div>
+
+                                <div class="form-group">
+                                    <label>Mother Current Status</label>
+                                    @Html.DropDownList("MothersCurrentStatus", new List<SelectListItem>
+                                     {
+                                           new SelectListItem { Text = "Living", Value = "Living", },
+                                           new SelectListItem { Text = "Death", Value = "Death"},
+                                           new SelectListItem { Text = "Separate", Value = "Separate"},
+                                     }, "----Select----", htmlAttributes: new { @class = "form-control", required = "required" })
+                                </div>
+
+                                <div class="form-group">
+                                    <label>Father Name</label>
+                                    @Html.EditorFor(model => model.FathersName, new { htmlAttributes = new { @class = "form-control", required = "required" } })
+                                    @Html.ValidationMessageFor(model => model.FathersName, "", new { @class = "text-danger" })
+                                </div>
+
+                                <div class="form-group">
+                                    <label>Fathers Current Status</label>
+                                    @Html.DropDownList("FathersCurrentStatus", new List<SelectListItem>
+                                    {
+                                          new SelectListItem { Text = "Living", Value = "Living", },
+                                          new SelectListItem { Text = "Death", Value = "Death"},
+                                          new SelectListItem { Text = "Separate", Value = "Separate"},
+                                    }, "----Select----", htmlAttributes: new { @class = "form-control", required = "required" })
+                                </div>
+
+                                <div class="form-group">
+                                    <label>Sisters Count</label>
+                                    @Html.EditorFor(model => model.SistersCount, new { htmlAttributes = new { @class = "form-control", required = "required" } })
+                                    @Html.ValidationMessageFor(model => model.SistersCount, "", new { @class = "text-danger" })
+                                </div>
+
+                                <div class="form-group">
+                                    <label>Brothers Count</label>
+                                    @Html.EditorFor(model => model.BrothersCount, new { htmlAttributes = new { @class = "form-control", required = "required" } })
+                                    @Html.ValidationMessageFor(model => model.BrothersCount, "", new { @class = "text-danger" })
+                                </div>
+
+                                <div class="form-group">
+                                    <label>Sibling Count</label>
+                                    @Html.EditorFor(model => model.SiblingCount, new { htmlAttributes = new { @class = "form-control", required = "required" } })
+                                    @Html.ValidationMessageFor(model => model.SiblingCount, "", new { @class = "text-danger" })
+                                </div>
+                            </div>
+
+                            <div class="col-md-6">
+
+
+                                <div class="form-group">
+                                    <label>Care Taker Address</label>
+                                    <textarea id="CaretakerAddress" name="CaretakerAddress" required class="form-control">@Model.CaretakerAddress</textarea>
+                                    @Html.ValidationMessageFor(model => model.CaretakerAddress, "", new { @class = "text-danger" })
+                                </div>
+
+                                <div class="form-group">
+                                    <label>Address District</label>
+                                    @Html.DropDownList("AddressDistrict", null, "----Select----", htmlAttributes: new { @class = "form-control", required = "required" })
+                                    @Html.ValidationMessageFor(model => model.AddressDistrict, "", new { @class = "text-danger" })
+                                </div>
+
+                                <div class="form-group">
+                                    <label>Conatct Number</label>
+                                    @Html.EditorFor(model => model.ContactNumber, new { htmlAttributes = new { @class = "form-control", required = "required", onblur = "PhoneNumberValidation()" } })
+                                    <span id="msg" style="color:red"></span>
+                                    @Html.ValidationMessageFor(model => model.ContactNumber, "", new { @class = "text-danger" })
+                                </div>
+
+                                <div class="form-group">
+                                    <label>Closest Alive Relative</label>
+                                    @Html.DropDownList("ClosestAliveRelative", new List<SelectListItem>
+                                      {
+                                            new SelectListItem { Text = "Yes", Value = "Yes" },
+                                            new SelectListItem { Text = "No", Value = "No"},
+                                      }, "----Select----", htmlAttributes: new { @class = "form-control", required = "required" })
+                                </div>
+
+                                <div class="form-group">
+                                    <label>Relative Address</label>
+                                    <textarea id="RelativeAddress" name="RelativeAddress" class="form-control" required>@Model.RelativeAddress</textarea>
+                                    @Html.ValidationMessageFor(model => model.RelativeAddress, "", new { @class = "text-danger" })
+                                </div>
+
+                                <div class="form-group">
+                                    <label>Relative Contact Number</label>
+                                    @Html.EditorFor(model => model.RelativeContactNumber, new { htmlAttributes = new { @class = "form-control", required = "required", onblur = "PhoneNumberValidation1()" } })
+                                    <span id="msgRelative" style="color:red"></span>
+                                    @Html.ValidationMessageFor(model => model.RelativeContactNumber, "", new { @class = "text-danger" })
+                                </div>
+
+                                <div class="form-group">
+                                    <label>Data Collection Date</label>
+                                    @Html.EditorFor(model => model.DataCollectionDate, new { htmlAttributes = new { @Value = @Model.DataCollectionDate.ToString("yyy-MM-dd"), @class = "form-control", required = "require", type = "date" } })
+                                    @Html.ValidationMessageFor(model => model.DataCollectionDate, "", new { @class = "text-danger" })
+                                </div>
+
+                                <div class="form-group">
+                                    <label>Child Care Institution Enroll Date</label>
+                                    @Html.EditorFor(model => model.ChildCareInstitutionEnrollDate, new { htmlAttributes = new { @Value = @Model.ChildCareInstitutionEnrollDate.ToString("yyy-MM-dd"), @class = "form-control", required = "require", type = "date" } })
+                                    @Html.ValidationMessageFor(model => model.ChildCareInstitutionEnrollDate, "", new { @class = "text-danger" })
+                                </div>
+
+                                <div class="form-group">
+                                    <label>Child Consent To Fostering</label>
+                                    @Html.DropDownList("ChildConsentToFostering", new List<SelectListItem>
+                                    {
+                                          new SelectListItem { Text = "Yes", Value = "Yes", },
+                                          new SelectListItem { Text = "No", Value = "No"}
+
+                                    }, "----Select----", htmlAttributes: new { @class = "form-control", required = "required" })
+                                </div>
+
+                                <div class="form-group">
+                                    <label>Biological Parents Consent To Fostering</label>
+                                    @Html.DropDownList("BiologicalParentsConsentToFostering", new List<SelectListItem>
+                                       {
+                                             new SelectListItem { Text = "Yes", Value = "Yes", },
+                                             new SelectListItem { Text = "No", Value = "No"}
+
+                                      }, "----Select----", htmlAttributes: new { @class = "form-control", required = "required" })
+                                </div>
+
+                                <div class="form-group">
+                                    <label>In CCI For</label>
+                                    <textarea id="InCCIFor" name="InCCIFor" class="form-control" required placeholder="In CCI For Resone">@Model.InCCIFor</textarea>
+                                    @Html.ValidationMessageFor(model => model.InCCIFor, "", new { @class = "text-danger" })
+                                </div>
+
+                                <div class="form-group">
+                                    <label>Potential For Foster</label>
+                                    @Html.DropDownList("PotentialForFoster", new List<SelectListItem>
+                                                                     {
+                                                                           new SelectListItem { Text = "Yes", Value = "Yes", },
+                                                                           new SelectListItem { Text = "No", Value = "No"}
+
+                                                                    }, "----Select----", htmlAttributes: new { @class = "form-control", required = "required" })
+                                </div>
+
+                                <div class="form-group">
+                                    <label>Is Fostering</label>
+                                    @Html.DropDownList("IsFostering", new List<SelectListItem>
+                                 {
+                                       new SelectListItem { Text = "Yes", Value = "Yes", },
+                                       new SelectListItem { Text = "No", Value = "No"}
+
+                                }, "----Select----", htmlAttributes: new { @class = "form-control", required = "required" })
+                                </div>
+
+                                <div class="form-group">
+                                    <label>Placement District</label>
+                                    @Html.DropDownList("PlacementDistrict", null, "----Select----", htmlAttributes: new { @class = "form-control", required = "required" })
+                                    @Html.ValidationMessageFor(model => model.PlacementDistrict, "", new { @class = "text-danger" })
+                                </div>
+
+                                <div class="form-group">
+                                    <label>Monitoring District</label>
+                                    @Html.DropDownList("MonitoringDistrict", null, "----Select----", htmlAttributes: new { @class = "form-control", required = "required" })
+                                    @Html.ValidationMessageFor(model => model.MonitoringDistrict, "", new { @class = "text-danger" })
+                                </div>
+
+                                <div class="form-group">
+                                    <label>Last Follow Up Date</label>
+                                    @Html.EditorFor(model => model.LastFollowUpDate, new { htmlAttributes = new { @Value = @Model.LastFollowUpDate.ToString("yyy-MM-dd"), @class = "form-control", required = "require", type = "date" } })
+                                    @Html.ValidationMessageFor(model => model.LastFollowUpDate, "", new { @class = "text-danger" })
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="box-footer">
+                        <input type="submit" value="Create" class="btn btn-primary" />
+                    </div>
+                </div>
+            </div>
+        </div>
+    }
+    <div>
+        <a href="/Admin/ChildMaster/Index" class="btn btn-dropbox">Back to List</a>
+    </div>
+</section>

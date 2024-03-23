@@ -1,0 +1,225 @@
+﻿@model FosterCare.FosterParentTbl
+
+@{
+    ViewBag.Title = "Create";
+    Layout = "~/Areas/Admin/Views/Shared/_LayoutAdmin.cshtml";
+}
+<script>
+
+    function GetDistrictByState() {
+        var State = $('#State').val();
+        $.ajax({
+            url: '/TehsilMaster/GetDistrictByState',
+            type: "POST",
+            dataType: "JSON",
+            data: { StateID: State },
+            success: function (response) {
+                $("#District").html("");
+                if (response.length != 0) {
+                    $('#District').append(new Option("--Select District--", ""));
+                    $.each(response, function (i, GramPanchayatID) {
+                        $('#District').append(new Option(GramPanchayatID.Text, GramPanchayatID.Value));
+                    });
+                }
+                else {
+                    $('#District').append(new Option("---No District Found !---", ""));
+                }
+            }
+        });
+    }
+
+
+    function CheckReason(val) {
+        if (val == "Others") {
+            $('#RFC').css("display", "");
+        }
+        else {
+            $('#RFC').css("display", "none");
+        }
+    }
+    function CheckEDU(val) {
+        if (val == "Others") {
+            $('#CheckEDU').css("display", "");
+        }
+        else {
+            $('#CheckEDU').css("display", "none");
+        }
+    }
+    function MarriedStatus(val) {
+        if (val == "Married") {
+            $('#MarriedStatus').css("display", "");
+            $('#OccupationOf').css("display", "");
+            $('#AgeOf').css("display", "");
+        }
+        else {
+            $('#MarriedStatus').css("display", "none");
+            $('#OccupationOf').css("display", "none");
+            $('#AgeOf').css("display", "none");
+        }
+    }
+</script>
+
+
+
+<section class="content-header">
+    <h1>Add Foster Parent<small>(Add Foster Parent)</small></h1>
+</section>
+<section class="content">
+
+    @using (Html.BeginForm("Create", "FosterParent", FormMethod.Post, new { enctype = "multipart/form-data" }))
+    {
+
+        <div class="row">
+            <div class="col-md-12">
+                @Html.AntiForgeryToken()
+                @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                <div class="box box-warning">
+                    <div class="box-body">
+                        <div class="form-group">
+                            <label>Foster Care For</label>
+                                @Html.DropDownList("FosterCareFor", new List<SelectListItem>
+                                              {
+                                                    new SelectListItem { Text = "MySelf", Value = "MySelf", },
+                                                    new SelectListItem { Text = "Others", Value = "Others"},
+                                              }, "----Select----", htmlAttributes: new { @class = "form-control", required = "required" })
+                        </div>
+
+                        <div class="form-group">
+                            <label>Foster Parent Name</label>
+                                @Html.EditorFor(model => model.FosterParentName, new { htmlAttributes = new { @class = "form-control" , required = "required" } })
+                                @Html.ValidationMessageFor(model => model.FosterParentName, "", new { @class = "text-danger" })
+                        </div>
+
+                        <div class="form-group">
+                            <label>State</label>
+                                @Html.DropDownList("State", null, "--Select--",htmlAttributes: new { @class = "form-control" ,onchange= "GetDistrictByState()" , required = "required" })
+                                @Html.ValidationMessageFor(model => model.State, "", new { @class = "text-danger" })
+                        </div>
+
+                        <div class="form-group">
+                            <label>District Name</label>
+                            @Html.DropDownList("District", null, "--Select--",htmlAttributes: new { @class = "form-control", required = "required" })
+                            @Html.ValidationMessageFor(model => model.District, "", new { @class = "text-danger" })
+                        </div>
+
+                        <div class="form-group">
+                            <label>Gender</label>
+                            @Html.DropDownList("Gender", new List<SelectListItem>
+                                               {
+                                                     new SelectListItem { Text = "Male", Value = "Male", },
+                                                      new SelectListItem { Text = "Female", Value = "Female", },
+                                                     new SelectListItem { Text = "Others", Value = "Others"},
+                                               }, "----Select----", htmlAttributes: new { @class = "form-control", required = "required" })
+                        </div>
+
+                        <div class="form-group">
+                            <label>Age</label>
+                                @Html.EditorFor(model => model.Age, new { htmlAttributes = new { @class = "form-control" , required = "required" } })
+                                @Html.ValidationMessageFor(model => model.Age, "", new { @class = "text-danger" })
+                        </div>
+
+                        <div class="form-group">
+                            <label>Phone Number</label>
+                                @Html.EditorFor(model => model.PhoneNumber, new { htmlAttributes = new { @class = "form-control", required = "required" } })
+                        </div>
+
+                        <div class="form-group">
+                            <label>Email</label>
+                                @Html.EditorFor(model => model.Email, new { htmlAttributes = new { @class = "form-control" , required = "required" } })
+                                @Html.ValidationMessageFor(model => model.Email, "", new { @class = "text-danger" })
+                        </div>
+
+                        <div class="form-group">
+                            <label>Reason For Foster Care</label>
+                            @Html.DropDownList("ReasonForFosterCare", new List<SelectListItem>
+                                         {
+                                               new SelectListItem { Text = "Willingness", Value = "Willingness", },
+                                                new SelectListItem { Text = "I'm Retined", Value = "I'm Retined", },
+                                               new SelectListItem { Text = "I'm Capable", Value = "I'm Capable"},
+                                               new SelectListItem { Text = "My Child are grown Adult", Value = "My Child are grown Adult"},
+                                               new SelectListItem { Text = "My Child are Away", Value = "My Child are Away"},
+                                               new SelectListItem { Text = "Others", Value = "Others"},
+                                               
+                                         }, "----Select----", htmlAttributes: new { @class = "form-control", required = "required",@onchange="CheckReason(this.value)" })
+                        </div>
+
+                        <div class="form-group" id="RFC" style="display:none">
+                            <label>Other Reasone</label>
+                                @Html.EditorFor(model => model.OtherReasone, new { htmlAttributes = new { @class = "form-control" } })
+                                @Html.ValidationMessageFor(model => model.OtherReasone, "", new { @class = "text-danger" })
+                        </div>
+
+                        <div class="form-group">
+                            <label>Education / Qualification</label>
+                            @Html.DropDownList("Education", new List<SelectListItem>
+                                       {
+                                             new SelectListItem { Text = "10th", Value = "10th", },
+                                              new SelectListItem { Text = "12th", Value = "12th", },
+                                             new SelectListItem { Text = "Gradute", Value = "Gradute"},
+                                           new SelectListItem { Text = "PHD", Value = "PHD"},
+                                           new SelectListItem { Text = "Others", Value = "Others"},
+                                       }, "----Select----", htmlAttributes: new { @class = "form-control", required = "required", @onchange = "CheckEDU(this.value)" })
+                        </div>
+
+                        <div class="form-group" id="CheckEDU" style="display:none">
+                            <label>Other Education</label>
+                                @Html.EditorFor(model => model.OtherEducation, new { htmlAttributes = new { @class = "form-control" } })
+                                @Html.ValidationMessageFor(model => model.OtherEducation, "", new { @class = "text-danger" })
+                        </div>
+
+                        <div class="form-group">
+                            <label>Occupation</label>
+                            @Html.DropDownList("Occupation", new List<SelectListItem>
+                                     {
+                                           new SelectListItem { Text = "Goverment Employee", Value = "Goverment Employee", },
+                                            new SelectListItem { Text = "Private Employee", Value = "Private Employee", },
+                                           new SelectListItem { Text = "Self-Employed", Value = "Self-Employed"},
+                                         new SelectListItem { Text = "Business", Value = "Business"},
+                                         new SelectListItem { Text = "UnEmployed", Value = "UnEmployed"},
+                                         new SelectListItem { Text = "Retired", Value = "Retired"},
+                                     }, "----Select----", htmlAttributes: new { @class = "form-control", required = "required" })
+                        </div>
+
+                        <div class="form-group">
+                            <label>Marital Status</label>
+                            @Html.DropDownList("MaritalStatus", new List<SelectListItem>
+                                 {
+                                       new SelectListItem { Text = "Married", Value = "Married", },
+                                        new SelectListItem { Text = "Unmarried", Value = "Unmarried", },
+                                       new SelectListItem { Text = "Divorced", Value = "Divorced"},
+                                     new SelectListItem { Text = "Single Parent", Value = "Single Parent"},
+                                 }, "----Select----", htmlAttributes: new { @class = "form-control", required = "required", @onchange = "MarriedStatus(this.value)" })
+                        </div>
+                        
+                        <div class="form-group" id="MarriedStatus" style="display:none">
+                            <label>NameOfSpouse</label>
+                                @Html.EditorFor(model => model.NameOfSpouse, new { htmlAttributes = new { @class = "form-control" } })
+                                @Html.ValidationMessageFor(model => model.NameOfSpouse, "", new { @class = "text-danger" })
+                        </div>
+
+                        <div class="form-group" id="AgeOf" style="display:none">
+                            <label>Age Of Spouse</label>
+                                @Html.EditorFor(model => model.AgeOfSpouse, new { htmlAttributes = new { @class = "form-control" } })
+                                @Html.ValidationMessageFor(model => model.AgeOfSpouse, "", new { @class = "text-danger" })
+                        </div>
+
+                        <div class="form-group" id="OccupationOf" style="display:none">
+                            <label>Occupation Of Spouse</label>
+                                @Html.EditorFor(model => model.OccupationOfSpouse, new { htmlAttributes = new { @class = "form-control" } })
+                                @Html.ValidationMessageFor(model => model.OccupationOfSpouse, "", new { @class = "text-danger" })
+                        </div>
+
+
+                    </div>
+                    <div class="box-footer">
+                        <input type="submit" value="Create" class="btn btn-primary" />
+                    </div>
+                </div>
+            </div>
+        </div>
+    }
+
+    <div>
+        <a href="/Admin/RoleMaster/Index" class="btn btn-dropbox">Back to List</a>
+    </div>
+</section>

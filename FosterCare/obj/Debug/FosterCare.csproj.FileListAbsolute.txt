@@ -1,0 +1,189 @@
+E:\Jainam\FosterCare\FosterCare\bin\FosterCare.dll.config
+E:\Jainam\FosterCare\FosterCare\bin\FosterCare.dll
+E:\Jainam\FosterCare\FosterCare\bin\FosterCare.pdb
+E:\Jainam\FosterCare\FosterCare\bin\roslyn\csc.exe
+E:\Jainam\FosterCare\FosterCare\bin\roslyn\csc.exe.config
+E:\Jainam\FosterCare\FosterCare\bin\roslyn\csc.rsp
+E:\Jainam\FosterCare\FosterCare\bin\roslyn\csi.exe
+E:\Jainam\FosterCare\FosterCare\bin\roslyn\csi.exe.config
+E:\Jainam\FosterCare\FosterCare\bin\roslyn\csi.rsp
+E:\Jainam\FosterCare\FosterCare\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+E:\Jainam\FosterCare\FosterCare\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+E:\Jainam\FosterCare\FosterCare\bin\roslyn\Microsoft.CodeAnalysis.CSharp.Scripting.dll
+E:\Jainam\FosterCare\FosterCare\bin\roslyn\Microsoft.CodeAnalysis.dll
+E:\Jainam\FosterCare\FosterCare\bin\roslyn\Microsoft.CodeAnalysis.Scripting.dll
+E:\Jainam\FosterCare\FosterCare\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+E:\Jainam\FosterCare\FosterCare\bin\roslyn\Microsoft.CSharp.Core.targets
+E:\Jainam\FosterCare\FosterCare\bin\roslyn\Microsoft.DiaSymReader.Native.amd64.dll
+E:\Jainam\FosterCare\FosterCare\bin\roslyn\Microsoft.DiaSymReader.Native.x86.dll
+E:\Jainam\FosterCare\FosterCare\bin\roslyn\Microsoft.Managed.Core.targets
+E:\Jainam\FosterCare\FosterCare\bin\roslyn\Microsoft.VisualBasic.Core.targets
+E:\Jainam\FosterCare\FosterCare\bin\roslyn\Microsoft.Win32.Primitives.dll
+E:\Jainam\FosterCare\FosterCare\bin\roslyn\System.AppContext.dll
+E:\Jainam\FosterCare\FosterCare\bin\roslyn\System.Collections.Immutable.dll
+E:\Jainam\FosterCare\FosterCare\bin\roslyn\System.Console.dll
+E:\Jainam\FosterCare\FosterCare\bin\roslyn\System.Diagnostics.DiagnosticSource.dll
+E:\Jainam\FosterCare\FosterCare\bin\roslyn\System.Diagnostics.FileVersionInfo.dll
+E:\Jainam\FosterCare\FosterCare\bin\roslyn\System.Diagnostics.StackTrace.dll
+E:\Jainam\FosterCare\FosterCare\bin\roslyn\System.Globalization.Calendars.dll
+E:\Jainam\FosterCare\FosterCare\bin\roslyn\System.IO.Compression.dll
+E:\Jainam\FosterCare\FosterCare\bin\roslyn\System.IO.Compression.ZipFile.dll
+E:\Jainam\FosterCare\FosterCare\bin\roslyn\System.IO.FileSystem.dll
+E:\Jainam\FosterCare\FosterCare\bin\roslyn\System.IO.FileSystem.Primitives.dll
+E:\Jainam\FosterCare\FosterCare\bin\roslyn\System.Net.Http.dll
+E:\Jainam\FosterCare\FosterCare\bin\roslyn\System.Net.Sockets.dll
+E:\Jainam\FosterCare\FosterCare\bin\roslyn\System.Reflection.Metadata.dll
+E:\Jainam\FosterCare\FosterCare\bin\roslyn\System.Runtime.InteropServices.RuntimeInformation.dll
+E:\Jainam\FosterCare\FosterCare\bin\roslyn\System.Security.Cryptography.Algorithms.dll
+E:\Jainam\FosterCare\FosterCare\bin\roslyn\System.Security.Cryptography.Encoding.dll
+E:\Jainam\FosterCare\FosterCare\bin\roslyn\System.Security.Cryptography.Primitives.dll
+E:\Jainam\FosterCare\FosterCare\bin\roslyn\System.Security.Cryptography.X509Certificates.dll
+E:\Jainam\FosterCare\FosterCare\bin\roslyn\System.Text.Encoding.CodePages.dll
+E:\Jainam\FosterCare\FosterCare\bin\roslyn\System.Threading.Tasks.Extensions.dll
+E:\Jainam\FosterCare\FosterCare\bin\roslyn\System.ValueTuple.dll
+E:\Jainam\FosterCare\FosterCare\bin\roslyn\System.Xml.ReaderWriter.dll
+E:\Jainam\FosterCare\FosterCare\bin\roslyn\System.Xml.XmlDocument.dll
+E:\Jainam\FosterCare\FosterCare\bin\roslyn\System.Xml.XPath.dll
+E:\Jainam\FosterCare\FosterCare\bin\roslyn\System.Xml.XPath.XDocument.dll
+E:\Jainam\FosterCare\FosterCare\bin\roslyn\vbc.exe
+E:\Jainam\FosterCare\FosterCare\bin\roslyn\vbc.exe.config
+E:\Jainam\FosterCare\FosterCare\bin\roslyn\vbc.rsp
+E:\Jainam\FosterCare\FosterCare\bin\roslyn\VBCSCompiler.exe
+E:\Jainam\FosterCare\FosterCare\bin\roslyn\VBCSCompiler.exe.config
+E:\Jainam\FosterCare\FosterCare\bin\EntityFramework.dll
+E:\Jainam\FosterCare\FosterCare\bin\EntityFramework.SqlServer.dll
+E:\Jainam\FosterCare\FosterCare\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+E:\Jainam\FosterCare\FosterCare\bin\Microsoft.Web.Infrastructure.dll
+E:\Jainam\FosterCare\FosterCare\bin\Newtonsoft.Json.dll
+E:\Jainam\FosterCare\FosterCare\bin\System.Net.Http.Formatting.dll
+E:\Jainam\FosterCare\FosterCare\bin\System.Web.Cors.dll
+E:\Jainam\FosterCare\FosterCare\bin\System.Web.Helpers.dll
+E:\Jainam\FosterCare\FosterCare\bin\System.Web.Http.Cors.dll
+E:\Jainam\FosterCare\FosterCare\bin\System.Web.Http.dll
+E:\Jainam\FosterCare\FosterCare\bin\System.Web.Http.WebHost.dll
+E:\Jainam\FosterCare\FosterCare\bin\System.Web.Mvc.dll
+E:\Jainam\FosterCare\FosterCare\bin\System.Web.Razor.dll
+E:\Jainam\FosterCare\FosterCare\bin\System.Web.Webpages.Deployment.dll
+E:\Jainam\FosterCare\FosterCare\bin\System.Web.Webpages.dll
+E:\Jainam\FosterCare\FosterCare\bin\System.Web.Webpages.Razor.dll
+E:\Jainam\FosterCare\FosterCare\bin\EntityFramework.xml
+E:\Jainam\FosterCare\FosterCare\bin\EntityFramework.SqlServer.xml
+E:\Jainam\FosterCare\FosterCare\bin\System.Net.Http.Formatting.xml
+E:\Jainam\FosterCare\FosterCare\bin\System.Web.Http.xml
+E:\Jainam\FosterCare\FosterCare\bin\System.Web.Http.Cors.xml
+E:\Jainam\FosterCare\FosterCare\bin\System.Web.Razor.xml
+E:\Jainam\FosterCare\FosterCare\bin\System.Web.Webpages.xml
+E:\Jainam\FosterCare\FosterCare\bin\System.Web.Webpages.Deployment.xml
+E:\Jainam\FosterCare\FosterCare\bin\System.Web.Webpages.Razor.xml
+E:\Jainam\FosterCare\FosterCare\bin\System.Web.Helpers.xml
+E:\Jainam\FosterCare\FosterCare\bin\System.Web.Mvc.xml
+E:\Jainam\FosterCare\FosterCare\bin\Newtonsoft.Json.xml
+E:\Jainam\FosterCare\FosterCare\bin\System.Web.Http.WebHost.xml
+E:\Jainam\FosterCare\FosterCare\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+E:\Jainam\FosterCare\FosterCare\obj\Debug\FosterCare.csproj.CoreCompileInputs.cache
+E:\Jainam\FosterCare\FosterCare\obj\Debug\FosterCare.csproj.CopyComplete
+E:\Jainam\FosterCare\FosterCare\obj\Debug\FosterCare.dll
+E:\Jainam\FosterCare\FosterCare\obj\Debug\FosterCare.pdb
+E:\Jainam\FosterCare\FosterCare\bin\PagedList.dll
+E:\Jainam\FosterCare\FosterCare\bin\PagedList.Mvc.dll
+E:\Jainam\FosterCare\FosterCare\bin\PagedList.xml
+E:\Jainam\FosterCare\FosterCare\bin\PagedList.Mvc.xml
+E:\Jainam\FosterCare\FosterCare\obj\Debug\FosterCare.csproj.AssemblyReference.cache
+D:\Elixation Informatoique\FosterCare\FosterCare\FosterCare\bin\FosterCare.dll.config
+D:\Elixation Informatoique\FosterCare\FosterCare\FosterCare\bin\FosterCare.dll
+D:\Elixation Informatoique\FosterCare\FosterCare\FosterCare\bin\FosterCare.pdb
+D:\Elixation Informatoique\FosterCare\FosterCare\FosterCare\bin\roslyn\csc.exe
+D:\Elixation Informatoique\FosterCare\FosterCare\FosterCare\bin\roslyn\csc.exe.config
+D:\Elixation Informatoique\FosterCare\FosterCare\FosterCare\bin\roslyn\csc.rsp
+D:\Elixation Informatoique\FosterCare\FosterCare\FosterCare\bin\roslyn\csi.exe
+D:\Elixation Informatoique\FosterCare\FosterCare\FosterCare\bin\roslyn\csi.exe.config
+D:\Elixation Informatoique\FosterCare\FosterCare\FosterCare\bin\roslyn\csi.rsp
+D:\Elixation Informatoique\FosterCare\FosterCare\FosterCare\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+D:\Elixation Informatoique\FosterCare\FosterCare\FosterCare\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+D:\Elixation Informatoique\FosterCare\FosterCare\FosterCare\bin\roslyn\Microsoft.CodeAnalysis.CSharp.Scripting.dll
+D:\Elixation Informatoique\FosterCare\FosterCare\FosterCare\bin\roslyn\Microsoft.CodeAnalysis.dll
+D:\Elixation Informatoique\FosterCare\FosterCare\FosterCare\bin\roslyn\Microsoft.CodeAnalysis.Scripting.dll
+D:\Elixation Informatoique\FosterCare\FosterCare\FosterCare\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+D:\Elixation Informatoique\FosterCare\FosterCare\FosterCare\bin\roslyn\Microsoft.CSharp.Core.targets
+D:\Elixation Informatoique\FosterCare\FosterCare\FosterCare\bin\roslyn\Microsoft.DiaSymReader.Native.amd64.dll
+D:\Elixation Informatoique\FosterCare\FosterCare\FosterCare\bin\roslyn\Microsoft.DiaSymReader.Native.x86.dll
+D:\Elixation Informatoique\FosterCare\FosterCare\FosterCare\bin\roslyn\Microsoft.Managed.Core.targets
+D:\Elixation Informatoique\FosterCare\FosterCare\FosterCare\bin\roslyn\Microsoft.VisualBasic.Core.targets
+D:\Elixation Informatoique\FosterCare\FosterCare\FosterCare\bin\roslyn\Microsoft.Win32.Primitives.dll
+D:\Elixation Informatoique\FosterCare\FosterCare\FosterCare\bin\roslyn\System.AppContext.dll
+D:\Elixation Informatoique\FosterCare\FosterCare\FosterCare\bin\roslyn\System.Collections.Immutable.dll
+D:\Elixation Informatoique\FosterCare\FosterCare\FosterCare\bin\roslyn\System.Console.dll
+D:\Elixation Informatoique\FosterCare\FosterCare\FosterCare\bin\roslyn\System.Diagnostics.DiagnosticSource.dll
+D:\Elixation Informatoique\FosterCare\FosterCare\FosterCare\bin\roslyn\System.Diagnostics.FileVersionInfo.dll
+D:\Elixation Informatoique\FosterCare\FosterCare\FosterCare\bin\roslyn\System.Diagnostics.StackTrace.dll
+D:\Elixation Informatoique\FosterCare\FosterCare\FosterCare\bin\roslyn\System.Globalization.Calendars.dll
+D:\Elixation Informatoique\FosterCare\FosterCare\FosterCare\bin\roslyn\System.IO.Compression.dll
+D:\Elixation Informatoique\FosterCare\FosterCare\FosterCare\bin\roslyn\System.IO.Compression.ZipFile.dll
+D:\Elixation Informatoique\FosterCare\FosterCare\FosterCare\bin\roslyn\System.IO.FileSystem.dll
+D:\Elixation Informatoique\FosterCare\FosterCare\FosterCare\bin\roslyn\System.IO.FileSystem.Primitives.dll
+D:\Elixation Informatoique\FosterCare\FosterCare\FosterCare\bin\roslyn\System.Net.Http.dll
+D:\Elixation Informatoique\FosterCare\FosterCare\FosterCare\bin\roslyn\System.Net.Sockets.dll
+D:\Elixation Informatoique\FosterCare\FosterCare\FosterCare\bin\roslyn\System.Reflection.Metadata.dll
+D:\Elixation Informatoique\FosterCare\FosterCare\FosterCare\bin\roslyn\System.Runtime.InteropServices.RuntimeInformation.dll
+D:\Elixation Informatoique\FosterCare\FosterCare\FosterCare\bin\roslyn\System.Security.Cryptography.Algorithms.dll
+D:\Elixation Informatoique\FosterCare\FosterCare\FosterCare\bin\roslyn\System.Security.Cryptography.Encoding.dll
+D:\Elixation Informatoique\FosterCare\FosterCare\FosterCare\bin\roslyn\System.Security.Cryptography.Primitives.dll
+D:\Elixation Informatoique\FosterCare\FosterCare\FosterCare\bin\roslyn\System.Security.Cryptography.X509Certificates.dll
+D:\Elixation Informatoique\FosterCare\FosterCare\FosterCare\bin\roslyn\System.Text.Encoding.CodePages.dll
+D:\Elixation Informatoique\FosterCare\FosterCare\FosterCare\bin\roslyn\System.Threading.Tasks.Extensions.dll
+D:\Elixation Informatoique\FosterCare\FosterCare\FosterCare\bin\roslyn\System.ValueTuple.dll
+D:\Elixation Informatoique\FosterCare\FosterCare\FosterCare\bin\roslyn\System.Xml.ReaderWriter.dll
+D:\Elixation Informatoique\FosterCare\FosterCare\FosterCare\bin\roslyn\System.Xml.XmlDocument.dll
+D:\Elixation Informatoique\FosterCare\FosterCare\FosterCare\bin\roslyn\System.Xml.XPath.dll
+D:\Elixation Informatoique\FosterCare\FosterCare\FosterCare\bin\roslyn\System.Xml.XPath.XDocument.dll
+D:\Elixation Informatoique\FosterCare\FosterCare\FosterCare\bin\roslyn\vbc.exe
+D:\Elixation Informatoique\FosterCare\FosterCare\FosterCare\bin\roslyn\vbc.exe.config
+D:\Elixation Informatoique\FosterCare\FosterCare\FosterCare\bin\roslyn\vbc.rsp
+D:\Elixation Informatoique\FosterCare\FosterCare\FosterCare\bin\roslyn\VBCSCompiler.exe
+D:\Elixation Informatoique\FosterCare\FosterCare\FosterCare\bin\roslyn\VBCSCompiler.exe.config
+D:\Elixation Informatoique\FosterCare\FosterCare\FosterCare\bin\EntityFramework.dll
+D:\Elixation Informatoique\FosterCare\FosterCare\FosterCare\bin\EntityFramework.SqlServer.dll
+D:\Elixation Informatoique\FosterCare\FosterCare\FosterCare\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+D:\Elixation Informatoique\FosterCare\FosterCare\FosterCare\bin\Microsoft.Web.Infrastructure.dll
+D:\Elixation Informatoique\FosterCare\FosterCare\FosterCare\bin\Newtonsoft.Json.dll
+D:\Elixation Informatoique\FosterCare\FosterCare\FosterCare\bin\PagedList.dll
+D:\Elixation Informatoique\FosterCare\FosterCare\FosterCare\bin\PagedList.Mvc.dll
+D:\Elixation Informatoique\FosterCare\FosterCare\FosterCare\bin\System.Net.Http.Formatting.dll
+D:\Elixation Informatoique\FosterCare\FosterCare\FosterCare\bin\System.Web.Cors.dll
+D:\Elixation Informatoique\FosterCare\FosterCare\FosterCare\bin\System.Web.Helpers.dll
+D:\Elixation Informatoique\FosterCare\FosterCare\FosterCare\bin\System.Web.Http.Cors.dll
+D:\Elixation Informatoique\FosterCare\FosterCare\FosterCare\bin\System.Web.Http.dll
+D:\Elixation Informatoique\FosterCare\FosterCare\FosterCare\bin\System.Web.Http.WebHost.dll
+D:\Elixation Informatoique\FosterCare\FosterCare\FosterCare\bin\System.Web.Mvc.dll
+D:\Elixation Informatoique\FosterCare\FosterCare\FosterCare\bin\System.Web.Razor.dll
+D:\Elixation Informatoique\FosterCare\FosterCare\FosterCare\bin\System.Web.Webpages.Deployment.dll
+D:\Elixation Informatoique\FosterCare\FosterCare\FosterCare\bin\System.Web.Webpages.dll
+D:\Elixation Informatoique\FosterCare\FosterCare\FosterCare\bin\System.Web.Webpages.Razor.dll
+D:\Elixation Informatoique\FosterCare\FosterCare\FosterCare\bin\EntityFramework.xml
+D:\Elixation Informatoique\FosterCare\FosterCare\FosterCare\bin\EntityFramework.SqlServer.xml
+D:\Elixation Informatoique\FosterCare\FosterCare\FosterCare\bin\PagedList.xml
+D:\Elixation Informatoique\FosterCare\FosterCare\FosterCare\bin\PagedList.Mvc.xml
+D:\Elixation Informatoique\FosterCare\FosterCare\FosterCare\bin\System.Net.Http.Formatting.xml
+D:\Elixation Informatoique\FosterCare\FosterCare\FosterCare\bin\System.Web.Http.xml
+D:\Elixation Informatoique\FosterCare\FosterCare\FosterCare\bin\System.Web.Http.Cors.xml
+D:\Elixation Informatoique\FosterCare\FosterCare\FosterCare\bin\System.Web.Razor.xml
+D:\Elixation Informatoique\FosterCare\FosterCare\FosterCare\bin\System.Web.Webpages.xml
+D:\Elixation Informatoique\FosterCare\FosterCare\FosterCare\bin\System.Web.Webpages.Deployment.xml
+D:\Elixation Informatoique\FosterCare\FosterCare\FosterCare\bin\System.Web.Webpages.Razor.xml
+D:\Elixation Informatoique\FosterCare\FosterCare\FosterCare\bin\System.Web.Helpers.xml
+D:\Elixation Informatoique\FosterCare\FosterCare\FosterCare\bin\System.Web.Mvc.xml
+D:\Elixation Informatoique\FosterCare\FosterCare\FosterCare\bin\Newtonsoft.Json.xml
+D:\Elixation Informatoique\FosterCare\FosterCare\FosterCare\bin\System.Web.Http.WebHost.xml
+D:\Elixation Informatoique\FosterCare\FosterCare\FosterCare\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+D:\Elixation Informatoique\FosterCare\FosterCare\FosterCare\obj\Debug\FosterCare.csproj.CoreCompileInputs.cache
+D:\Elixation Informatoique\FosterCare\FosterCare\FosterCare\obj\Debug\FosterCare.csproj.CopyComplete
+D:\Elixation Informatoique\FosterCare\FosterCare\FosterCare\obj\Debug\FosterCare.dll
+D:\Elixation Informatoique\FosterCare\FosterCare\FosterCare\obj\Debug\FosterCare.pdb
+D:\Elixation Informatoique\FosterCare\FosterCare\FosterCare\bin\ClosedXML.dll
+D:\Elixation Informatoique\FosterCare\FosterCare\FosterCare\bin\DocumentFormat.OpenXml.dll
+D:\Elixation Informatoique\FosterCare\FosterCare\FosterCare\bin\ExcelNumberFormat.dll
+D:\Elixation Informatoique\FosterCare\FosterCare\FosterCare\bin\ClosedXML.pdb
+D:\Elixation Informatoique\FosterCare\FosterCare\FosterCare\bin\ClosedXML.xml
+D:\Elixation Informatoique\FosterCare\FosterCare\FosterCare\bin\DocumentFormat.OpenXml.xml
+D:\Elixation Informatoique\FosterCare\FosterCare\FosterCare\bin\ExcelNumberFormat.xml
+D:\Elixation Informatoique\FosterCare\FosterCare\FosterCare\obj\Debug\FosterCare.csproj.AssemblyReference.cache

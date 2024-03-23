@@ -1,0 +1,44 @@
+﻿@model FosterCare.DistrictMasterTbl
+
+@{
+    ViewBag.Title = "Create";
+    Layout = "~/Areas/Admin/Views/Shared/_LayoutAdmin.cshtml";
+}
+<section class="content-header">
+    <h1>Add District<small>(Add District)</small></h1>
+</section>
+<section class="content">
+
+    @using (Html.BeginForm("Create", "DistrictMaster", FormMethod.Post, new { enctype = "multipart/form-data" }))
+    {
+
+        <div class="row">
+            <div class="col-md-12">
+                @Html.AntiForgeryToken()
+                @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                <div class="box box-warning">
+                    <div class="box-body">
+                        <div class="form-group">
+                            <label>State Name</label>
+                            @Html.DropDownList("StateID", null, "----Select----", htmlAttributes: new { @class = "form-control", required = "required" })
+                            @Html.ValidationMessageFor(model => model.StateID, "", new { @class = "text-danger" })
+                        </div>
+                        <div class="form-group">
+                            <label>District Name</label>
+                            @Html.EditorFor(model => model.DistrictName, new { htmlAttributes = new { @class = "form-control", required = "required" } })
+                            @Html.ValidationMessageFor(model => model.DistrictName, "", new { @class = "text-danger" })
+                        </div>
+
+                    </div>
+                    <div class="box-footer">
+                        <input type="submit" value="Create" class="btn btn-primary" />
+                    </div>
+                </div>
+            </div>
+        </div>
+    }
+
+    <div>
+        <a href="/Admin/DistrictMaster/Index" class="btn btn-dropbox">Back to List</a>
+    </div>
+</section>

@@ -1,0 +1,80 @@
+﻿@model FosterCare.TehsilMasterTbl
+
+@{
+    ViewBag.Title = "Edit";
+    Layout = "~/Areas/Admin/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<script>
+
+    function GetDistrictByState() {
+        var StateID = $('#StateID').val();
+        $.ajax({
+            url: '/TehsilMaster/GetDistrictByState',
+            type: "POST",
+            dataType: "JSON",
+            data: { StateID: StateID },
+            success: function (response) {
+                console.log(response);
+                $("#DistrictID").html("");
+                if (response.length != 0) {
+                    $('#DistrictID').append(new Option("--Select District--", ""));
+                    $.each(response, function (i, GramPanchayatID) {
+                        $('#DistrictID').append(new Option(GramPanchayatID.Text, GramPanchayatID.Value));
+                    });
+                }
+                else {
+                    $('#DistrictID').append(new Option("---No District Found !---", ""));
+                }
+            }
+        });
+    }
+</script>
+
+<section class="content-header">
+    <h1>Edit Tehsil Master<small>(Edit Tehsil Master)</small></h1>
+</section>
+<section class="content">
+    @using (Html.BeginForm("Edit", "TehsilMaster", FormMethod.Post))
+    {
+        @Html.AntiForgeryToken()
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+        @Html.HiddenFor(model => model.ID)
+        @Html.HiddenFor(model => model.IsActive)
+        @Html.HiddenFor(model => model.CreateDate)
+
+        <div class="row">
+            <div class="col-md-12">
+                <div class="box box-warning">
+                    <div class="box-body">
+                        <div class="form-group">
+                            <label>State Name</label>
+                            @Html.DropDownList("StateID", null, "--Select--" ,htmlAttributes: new { @class = "form-control", required = "required" ,onchange= "GetDistrictByState()" })
+                            @Html.ValidationMessageFor(model => model.StateID, "", new { @class = "text-danger" })
+
+                        </div>
+
+                        <div class="form-group">
+                            <label>District Name</label>
+                            @Html.DropDownList("DistrictID",null,"--Select--", htmlAttributes: new { @class = "form-control", required = "required" })
+                            @Html.ValidationMessageFor(model => model.DistrictID, "", new { @class = "text-danger" })
+
+                        </div>
+
+                        <div class="form-group">
+                            <label>Tehsil Name</label>
+                            @Html.EditorFor(model => model.TehsilName, new { htmlAttributes = new { @class = "form-control", required = "required" } })
+                            @Html.ValidationMessageFor(model => model.TehsilName, "", new { @class = "text-danger" })
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+            </div>
+            }
+            <div>
+                <a href="/Admin/TehsilMaster/Index" class="btn btn-dropbox">Back to List</a>
+            </div>
+    </section>
+
+

@@ -1,0 +1,282 @@
+﻿@model FosterCare.ParentMasterTbl
+
+@{
+    ViewBag.Title = "Create";
+    Layout = "~/Areas/Admin/Views/Shared/_LayoutAdmin.cshtml";
+}
+<script>
+    function PhoneNumberValidation() {
+        var mobileno = /^((\\+91-?)|0)?[0-9]{10}$/;
+        var txtmob = document.getElementById("ContactNumber").value;
+        if (txtmob.match(mobileno)) {
+            document.getElementById("msg").innerHTML = "";
+        }
+        else {
+            document.getElementById("msg").innerHTML = "Invalid Contact Number";
+            document.getElementById("ContactNumber").value = "";
+        }
+    }
+</script>
+<section class="content-header">
+    <h1>Add Parent<small>(Add Parent)</small></h1>
+</section>
+<section class="content">
+
+    @using (Html.BeginForm("Create", "ParentMaster", FormMethod.Post, new { enctype = "multipart/form-data" }))
+    {
+
+        <div class="row">
+            <div class="col-md-12">
+                @Html.AntiForgeryToken()
+                @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                <div class="box box-warning">
+                    <div class="box-body">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label>Foster Parent Serial Number</label>
+                                    @Html.EditorFor(model => model.FosterParentSerialNumber, new { htmlAttributes = new { @class = "form-control", required = "required" } })
+                                    @Html.ValidationMessageFor(model => model.FosterParentSerialNumber, "", new { @class = "text-danger" })
+                                </div>
+
+                                <div class="form-group">
+                                    <label>FosterParentDistrict</label>
+                                    @Html.DropDownList("FosterParentDistrict", null, "----Select----", htmlAttributes: new { @class = "form-control", required = "required" })
+                                    @Html.ValidationMessageFor(model => model.FosterParentDistrict, "", new { @class = "text-danger" })
+                                </div>
+
+                                <div class="form-group">
+                                    <label>Parent Code</label>
+                                    @Html.EditorFor(model => model.ParentCode, new { htmlAttributes = new { @class = "form-control", required = "required" } })
+                                    @Html.ValidationMessageFor(model => model.ParentCode, "", new { @class = "text-danger" })
+                                </div>
+
+                                <div class="form-group">
+                                    <label>Fosters Mothers Name</label>
+                                    @Html.EditorFor(model => model.FosterMothersName, new { htmlAttributes = new { @class = "form-control", required = "required" } })
+                                    @Html.ValidationMessageFor(model => model.FosterMothersName, "", new { @class = "text-danger" })
+
+                                </div>
+
+                                <div class="form-group">
+                                    <label>Foster Mothers DOB</label>
+                                    <input type="date" id="FosterMothersDOB" name="FosterMothersDOB" required class="form-control" />
+                                    @Html.ValidationMessageFor(model => model.FosterMothersDOB, "", new { @class = "text-danger" })
+                                </div>
+
+
+                                <div class="form-group">
+                                    <label>Foster Mother Current Status</label>
+                                    @Html.DropDownList("FosterMotherCurrentStatus", new List<SelectListItem>
+                                     {
+                                           new SelectListItem { Text = "Living", Value = "Living", },
+                                           new SelectListItem { Text = "Death", Value = "Death"},
+                                           new SelectListItem { Text = "Separate", Value = "Separate"},
+                                     }, "----Select----", htmlAttributes: new { @class = "form-control", required = "required" })
+                                    @Html.ValidationMessageFor(model => model.FosterMotherCurrentStatus, "", new { @class = "text-danger" })
+                                </div>
+
+                                <div class="form-group">
+                                    <label>Foster Mother Highest Education</label>
+                                    @Html.DropDownList("FosterMotherHighestEducation", new List<SelectListItem>
+                                     {
+                                           new SelectListItem { Text = "Primary", Value = "Primary", },
+                                           new SelectListItem { Text = "Secondary", Value = "Secondary"},
+                                           new SelectListItem { Text = "Graduate", Value = "Graduate"},
+                                           new SelectListItem { Text = "Postgraduate ", Value = "Postgraduate "},
+                                     }, "----Select----", htmlAttributes: new { @class = "form-control", required = "required" })
+                                    @Html.ValidationMessageFor(model => model.FosterMotherHighestEducation, "", new { @class = "text-danger" })
+                                </div>
+
+                                <div class="form-group">
+
+                                    <label>Foster Mother Employment Status</label>
+                                    @Html.DropDownList("FosterMotherEmploymentStatus", new List<SelectListItem>
+                                     {
+                                           new SelectListItem { Text = "Self", Value = "Self", },
+                                           new SelectListItem { Text = "Private", Value = "Private"},
+                                           new SelectListItem { Text = "Govt", Value = "Govt"},
+                                     }, "----Select----", htmlAttributes: new { @class = "form-control", required = "required" })
+                                    @Html.ValidationMessageFor(model => model.FosterMotherEmploymentStatus, "", new { @class = "text-danger" })
+                                </div>
+
+                                <div class="form-group">
+                                    <label>Foster Mother Income</label>
+                                    @Html.EditorFor(model => model.FosterMotherIncome, new { htmlAttributes = new { @class = "form-control", required = "required" } })
+                                    @Html.ValidationMessageFor(model => model.FosterMotherIncome, "", new { @class = "text-danger" })
+                                </div>
+
+                                <div class="form-group">
+                                    <label>Foster Fathers Name</label>
+                                    @Html.EditorFor(model => model.FosterFathersName, new { htmlAttributes = new { @class = "form-control", required = "required" } })
+                                    @Html.ValidationMessageFor(model => model.FosterFathersName, "", new { @class = "text-danger" })
+                                </div>
+
+                                <div class="form-group">
+                                    <label>Foster Fathers DOB</label>
+                                    <input id="FosterFathersDOB" name="FosterFathersDOB" class="form-control" required type="date" />
+                                    @Html.ValidationMessageFor(model => model.FosterFathersDOB, "", new { @class = "text-danger" })
+                                </div>
+
+                                <div class="form-group">
+                                    <label>Foster Fathers Current Status</label>
+                                    @Html.DropDownList("FosterFathersCurrentStatus", new List<SelectListItem>
+                                        {
+                                              new SelectListItem { Text = "Living", Value = "Living", },
+                                              new SelectListItem { Text = "Death", Value = "Death"},
+                                              new SelectListItem { Text = "Separate", Value = "Separate"},
+                                        }, "----Select----", htmlAttributes: new { @class = "form-control", required = "required" })
+                                    @Html.ValidationMessageFor(model => model.FosterFathersCurrentStatus, "", new { @class = "text-danger" })
+                                </div>
+
+                                <div class="form-group">
+                                    <label>Foster Fathers Highest Education</label>
+                                    @Html.DropDownList("FosterFathersHighestEducation", new List<SelectListItem>
+                                    {
+                                          new SelectListItem { Text = "Primary", Value = "Primary", },
+                                          new SelectListItem { Text = "Secondary", Value = "Secondary"},
+                                          new SelectListItem { Text = "Graduate", Value = "Graduate"},
+                                          new SelectListItem { Text = "Postgraduate ", Value = "Postgraduate "},
+                                    }, "----Select----", htmlAttributes: new { @class = "form-control", required = "required" })
+                                    @Html.ValidationMessageFor(model => model.FosterFathersHighestEducation, "", new { @class = "text-danger" })
+                                </div>
+
+                                <div class="form-group">
+                                    <label>FosterFathersEmploymentStatus</label>
+                                    @Html.DropDownList("FosterFathersEmploymentStatus", new List<SelectListItem>
+                                     {
+                                           new SelectListItem { Text = "Self", Value = "Self", },
+                                           new SelectListItem { Text = "Private", Value = "Private"},
+                                           new SelectListItem { Text = "Govt", Value = "Govt"},
+                                     }, "----Select----", htmlAttributes: new { @class = "form-control", required = "required" })
+                                    @Html.ValidationMessageFor(model => model.FosterFathersEmploymentStatus, "", new { @class = "text-danger" })
+                                </div>
+
+                                <div class="form-group">
+                                    <label>Foster Fathers Income</label>
+                                    @Html.EditorFor(model => model.FosterFathersIncome, new { htmlAttributes = new { @class = "form-control", required = "required" } })
+                                    @Html.ValidationMessageFor(model => model.FosterFathersIncome, "", new { @class = "text-danger" })
+                                </div>
+
+                                <div class="form-group">
+                                    <label>Address</label>
+                                    <textarea id="Address" name="Address" class="form-control" placeholder="Address.." required></textarea>
+                                    @Html.ValidationMessageFor(model => model.Address, "", new { @class = "text-danger" })
+                                </div>
+
+
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label>Contact Number</label>
+                                    @Html.EditorFor(model => model.ContactNumber, new { htmlAttributes = new { @class = "form-control", required = "required", onblur = "PhoneNumberValidation()" } })
+                                    <span id="msg" style="color:red"></span>
+                                    @Html.ValidationMessageFor(model => model.ContactNumber, "", new { @class = "text-danger" })
+                                </div>
+
+                                <div class="form-group">
+                                    <label>Foster Girls Count</label>
+                                    @Html.EditorFor(model => model.FosterGirlsCount, new { htmlAttributes = new { @class = "form-control", required = "required" } })
+                                    @Html.ValidationMessageFor(model => model.FosterGirlsCount, "", new { @class = "text-danger" })
+                                </div>
+
+                                <div class="form-group">
+                                    <label>Foster Boys Count</label>
+                                    @Html.EditorFor(model => model.FosterBoysCount, new { htmlAttributes = new { @class = "form-control", required = "required" } })
+                                    @Html.ValidationMessageFor(model => model.FosterBoysCount, "", new { @class = "text-danger" })
+
+                                </div>
+
+                                <div class="form-group">
+                                    <label>Ration Card Foster Children Count</label>
+                                    @Html.EditorFor(model => model.RationCardFosterChildrenCount, new { htmlAttributes = new { @class = "form-control", required = "required" } })
+                                    @Html.ValidationMessageFor(model => model.RationCardFosterChildrenCount, "", new { @class = "text-danger" })
+
+                                </div>
+
+                                <div class="form-group">
+                                    <label>Any Other Fosters</label>
+                                    @Html.DropDownList("AnyOtherFosters", new List<SelectListItem>
+                                      {
+                                            new SelectListItem { Text = "Yes", Value = "Yes", },
+                                            new SelectListItem { Text = "No", Value = "No"},
+                                      }, "----Select----", htmlAttributes: new { @class = "form-control", required = "required" })
+                                    @Html.ValidationMessageFor(model => model.AnyOtherFosters, "", new { @class = "text-danger" })
+                                </div>
+
+                                <div class="form-group">
+                                    <label>Child Sheet Fostered Children Count</label>
+                                    @Html.EditorFor(model => model.ChildSheetFosteredChildrenCount, new { htmlAttributes = new { @class = "form-control", required = "required" } })
+                                    @Html.ValidationMessageFor(model => model.ChildSheetFosteredChildrenCount, "", new { @class = "text-danger" })
+                                </div>
+
+                                <div class="form-group">
+                                    <label>Adopted Children Count</label>
+                                    @Html.EditorFor(model => model.AdoptedChildrenCount, new { htmlAttributes = new { @class = "form-control", required = "required" } })
+                                    @Html.ValidationMessageFor(model => model.AdoptedChildrenCount, "", new { @class = "text-danger" })
+                                </div>
+
+                                <div class="form-group">
+                                    <label>Biological Children Count</label>
+                                    @Html.EditorFor(model => model.BiologicalChildrenCount, new { htmlAttributes = new { @class = "form-control", required = "required" } })
+                                    @Html.ValidationMessageFor(model => model.BiologicalChildrenCount, "", new { @class = "text-danger" })
+                                </div>
+
+                                <div class="form-group">
+                                    <label>Placement Date</label>
+                                    <input type="date" name="PlacementDate" id="PlacementDate" class="form-control" required />
+                                    @Html.ValidationMessageFor(model => model.PlacementDate, "", new { @class = "text-danger" })
+                                </div>
+
+                                <div class="form-group">
+                                    <label>Reason For Fostering</label>
+                                    <textarea name="ReasonForFostering" id="ReasonForFostering" class="form-control" required></textarea>
+                                    @Html.ValidationMessageFor(model => model.ReasonForFostering, "", new { @class = "text-danger" })
+                                </div>
+
+                                <div class="form-group">
+                                    <label>Last Extension Date</label>
+                                    <input type="date" id="LastExtensionDate" name="LastExtensionDate" class="form-control" required />
+                                    @Html.ValidationMessageFor(model => model.LastExtensionDate, "", new { @class = "text-danger" })
+                                </div>
+
+                                <div class="form-group">
+                                    <label>Extension Period</label>
+                                    @Html.EditorFor(model => model.ExtensionPeriod, new { htmlAttributes = new { @class = "form-control", required = "required" } })
+                                    @Html.ValidationMessageFor(model => model.ExtensionPeriod, "", new { @class = "text-danger" })
+                                </div>
+
+                                <div class="form-group">
+
+                                    <label>Termination Date</label>
+                                    <input type="date" id="TerminationDate" name="TerminationDate" class="form-control" required />
+                                    @Html.ValidationMessageFor(model => model.TerminationDate, "", new { @class = "text-danger" })
+                                </div>
+                                <div class="form-group">
+                                    <label>Reason For Termination</label>
+                                    <textarea name="ReasonForTermination" id="ReasonForFostering" class="form-control" required></textarea>
+                                 
+                                </div>
+                                <div class="form-group">
+                                    <label>Last Follow Up Date</label>
+                                    <input type="date" id="LastFollowUpDate" name="LastFollowUpDate" class="form-control" required />
+                                    @Html.ValidationMessageFor(model => model.LastFollowUpDate, "", new { @class = "text-danger" })
+                                </div>
+
+             
+
+                            </div>
+                        </div>
+                        <div class="box-footer">
+                            <input type="submit" value="Create" class="btn btn-primary" />
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    }
+
+    <div>
+        <a href="/Admin/ParentMaster/Index" class="btn btn-dropbox">Back to List</a>
+    </div>
+</section>
